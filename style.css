@@ -1,10 +1,50 @@
-/* BEGIN CLASS */
+nav, aside {
+    background-color: white;
+    padding: 1%;
+}
 
+nav {
+    height: 24px;
+    background-color: #8c94c9;
+    display: flex;
+    margin-bottom: 10px;
+}
+  
+nav form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}  
 
-/* END CLASS */
+input {
+    font-size: 1.6rem;
+    height: 32px;
+}
+  
+  input[type="search"] {
+    flex: 3;
+}
+  
+  input[type="submit"] {
+    flex: 1;
+    margin-left: 1rem;
+    background: #333;
+    border: 0;
+    color: white;
+}
 
-/* BEGIN STYLE DIVS */
+  main {
+    display: flex;
+}
 
-
-
-/* END STYLE DIVS */
+aside {
+    flex: 1;
+    margin-left: 10px;
+    background-color: #9595b4;
+}
+  
+  aside li {
+    padding-bottom: 10px;
+}
