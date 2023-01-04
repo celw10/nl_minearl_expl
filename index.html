@@ -28,30 +28,45 @@
 
     <nav> 
 
-        <!-- CW: form attribute specifies the form the input element belongs -->
+        <!-- CW: The input tage specifies an input field where a user may enter data -->
 
-        <form>
-
-            <input type="search" name="q" placeholder="Search licenses, companies, dates, data type, ect." />
-            <input type="submit" value="Go!" />
-
-        </form>
+        <input type="search" name="q" placeholder="Search licenses, companies, dates, data type, ect." />
+        <input type="submit" value="Go!" />
 
     </nav>
 
+    <!-- CW: The main tage specifies the main content of a document -->
+
     <main>
         
-        <img class = "headshot" src="/Users/christopherwilliams/Documents/1_PROFESSIONAL/0_Courses/GetCoding/02QGIS/Images/230102_TmpImage_GeoreferencedClaims.jpg" width="1000" height="839" alt="Location of GIS Application?">
+        <img class = "headshot" src="/Users/christopherwilliams/Documents/1_PROFESSIONAL/0_Courses/GetCoding/02QGIS/Images/230102_TmpImage_GeoreferencedClaims.jpg" width="800" height="600" alt="Location of GIS Application?">
         
+        <!-- Aside tag defines some content aside from the content it is placed in, often placed as a side bar -->
+
         <aside>
+
             <h2>Toggle Fields in Map</h2>
+
+            <!--  CW: ul defines an unordered (bulleted) list, using with li creates bullets-->
     
-            <ul>
-              <li><a href="#">Current Mineral Exploration Licenses</a></li>
-              <li><a href="#">Historic Mineral Exploration Licenses</a></li>
-              <li><a href="#">Cancelled Mineral Exploraiton Licenses</a></li>
-              <li><a href="#">ect...</a></li>
+            <ul class="no-bullets">
+
+                <li> <input type="checkbox"> <a href="#">Current Mineral Exploration Licenses</a> </li>
+                <li> <input type="checkbox"> <a href="#">Cancelled Mineral Exploraiton Licenses</a></li>
+                <li> <input type="checkbox"> <a href="#">Historic Mineral Exploration Licenses</a>
+                    <ul class="no-bullets">
+                        <li> 
+                            <input type="search" name="q" placeholder="Year/Month/Day">
+                            <input type="submit" value="Search By Date"/>
+                        </li>
+                    </ul>
+                </li>
+                <li> <input type="checkbox"> <a href="#">Company Share Prices</a></li>
+                <li> <input type="checkbox"> <a href="#">Company Market Caps</a></li>
+                <li> <input type="checkbox"> <a href="#">Company Share Price Changes</a></li>
+
             </ul>
+
           </aside>
 
     </main>

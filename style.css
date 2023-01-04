@@ -1,3 +1,12 @@
+/* CLASS */
+
+ul.no-bullets{
+  list-style-type: none;
+  padding: 0;
+}
+
+/* STYLE */
+
 nav, aside {
     background-color: white;
     padding: 1%;
@@ -6,36 +15,29 @@ nav, aside {
 nav {
     height: 24px;
     background-color: #8c94c9;
+    align-items: center;
     display: flex;
     margin-bottom: 10px;
 }
-  
-nav form {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 2em;
-}  
 
-input {
+nav input {
     font-size: 1.6rem;
     height: 32px;
 }
   
-  input[type="search"] {
-    flex: 3;
+input[type="search"] {
+  flex: 3;
 }
   
-  input[type="submit"] {
-    flex: 1;
-    margin-left: 1rem;
-    background: #333;
-    border: 0;
-    color: white;
+input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white;
 }
 
-  main {
+main {
     display: flex;
 }
 
@@ -44,7 +46,12 @@ aside {
     margin-left: 10px;
     background-color: #9595b4;
 }
-  
-  aside li {
-    padding-bottom: 10px;
+
+ul li {
+  margin: 5px;
+  padding: 0px;
+}
+
+ul li ul li {
+  padding-left: 20px;
 }
