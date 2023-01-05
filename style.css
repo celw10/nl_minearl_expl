@@ -1,5 +1,6 @@
 /* CLASS */
 
+/* Class applied to unordered lists removing bullets */
 ul.no-bullets{
   list-style-type: none;
   padding: 0;
@@ -7,11 +8,13 @@ ul.no-bullets{
 
 /* STYLE */
 
+/* Color and pad nav and aside (the comma beans both?? */
 nav, aside {
     background-color: white;
     padding: 1%;
 }
 
+/* Styling for nav */
 nav {
     height: 24px;
     background-color: #8c94c9;
@@ -20,11 +23,13 @@ nav {
     margin-bottom: 10px;
 }
 
+/* Styling for the search input on nav */
 nav input {
     font-size: 1.6rem;
     height: 32px;
 }
-  
+
+/* Styling for search bar and submit button */
 input[type="search"] {
   flex: 3;
 }
@@ -37,21 +42,25 @@ input[type="submit"] {
   color: white;
 }
 
+/* Styling for main */
 main {
     display: flex;
 }
 
+/* Styling for aside */
 aside {
     flex: 1;
     margin-left: 10px;
     background-color: #9595b4;
 }
 
+/* Styling for outer lists */
 ul li {
   margin: 5px;
   padding: 0px;
 }
 
+/* Styling for lists within lists */
 ul li ul li {
   padding-left: 20px;
 }

@@ -45,27 +45,62 @@
 
         <aside>
 
-            <h2>Toggle Fields in Map</h2>
+            <h2>
+                Toggle Fields in Map
+            </h2>
+    
+            <h3> 
+                Exploration Licenses
+            </h3>
 
             <!--  CW: ul defines an unordered (bulleted) list, using with li creates bullets-->
-    
-            <ul class="no-bullets">
 
+            <ul class="no-bullets">
                 <li> <input type="checkbox"> <a href="#">Current Mineral Exploration Licenses</a> </li>
                 <li> <input type="checkbox"> <a href="#">Cancelled Mineral Exploraiton Licenses</a></li>
                 <li> <input type="checkbox"> <a href="#">Historic Mineral Exploration Licenses</a>
                     <ul class="no-bullets">
                         <li> 
-                            <input type="search" name="q" placeholder="Year/Month/Day">
-                            <input type="submit" value="Search By Date"/>
+                            <input type="date" name="HistDataDate" min="1970-01-01" max="2022-12-31">
+                            <input type="submit" value="Search"/>
                         </li>
                     </ul>
                 </li>
-                <li> <input type="checkbox"> <a href="#">Company Share Prices</a></li>
-                <li> <input type="checkbox"> <a href="#">Company Market Caps</a></li>
-                <li> <input type="checkbox"> <a href="#">Company Share Price Changes</a></li>
-
             </ul>
+            
+            <h3>
+                Historic Data
+            </h3>
+
+            <ul class="no-bullets">
+                <li> <input type="checkbox"> <a href=""> Surfical Geochemistry </a> </li>
+                <li> <input type="checkbox"> <a href=""> Drilling </a> </li>
+                <li> <input type="checkbox"> <a href=""> NI 43-101 Mineral Assessment Reports </a> </li>
+                <li> <input type="checkbox"> <a href=""> Geophysics </a> </li>
+                <li> <input type="checkbox"> <a href=""> Maps </a> </li>
+            </ul>
+
+            <h3>
+                Investors
+            </h3>
+
+            <!-- List within a list allows me to move the inner list (search bars) in -->
+
+            <ul class="no-bullets">
+                <li> <input type="checkbox"> <a href="#">Share Price</a></li>
+                <li> <input type="checkbox"> <a href="#">Market Capital</a></li>
+                <li> <input type="checkbox"> <a href="#">Share Price Change</a>
+                    <ul class="no-bullets">
+                        <li> 
+                            <input type="date" name="PCFrom" min="2010-01-01" max="2022-12-31">                            
+                            <a> to </a>
+                            <input type="date" name="PCTo" min="2010-01-01" max="2022-12-31">  
+                            <input type="submit" value="Search"/>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            
 
           </aside>
 
