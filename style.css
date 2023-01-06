@@ -6,7 +6,16 @@ ul.no-bullets{
   padding: 0;
 }
 
+image.map{
+  max-block-size: 10%;
+}
+
 /* STYLE */
+
+/* Constrain the maximum size of my image referenced to the width of the page */
+img {
+  max-width:80%;
+}
 
 /* Color and pad nav and aside (the comma beans both?? */
 nav, aside {
@@ -52,6 +61,7 @@ aside {
     flex: 1;
     margin-left: 10px;
     background-color: #9595b4;
+    max-width: 20%;
 }
 
 /* Styling for outer lists */
