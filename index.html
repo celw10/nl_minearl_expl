@@ -23,6 +23,11 @@
 
 <body> 
 
+    <!-- 
+    HERE, I'll have background images which can be displayed by clicking different links in the aside-menu bar. 
+    This will simulate my GIS application in the background
+    -->
+
     <!-- CW: The nav tag defines a set of navigation links  -->
 
     <nav> 
@@ -30,7 +35,7 @@
         <!-- CW: The input tag specifies an input field where a user may enter data -->
 
         <input type="search" name="q" placeholder="Search licenses, companies, dates, data type, ect." />
-        <input type="submit" value="Go!" />
+        <input type="submit" value="search" />
 
         <!-- CW: Image with JavaScript function for drop down animation -->
 
@@ -42,7 +47,7 @@
     
     <main>
 
-        <aside>
+        <aside class="aside-menu" id="togglemenu">
 
             <!-- CW: Image with JavaScript funciton for hide menu animation-->
 
@@ -58,103 +63,53 @@
     
             <!--  CW: ul defines an unordered (bulleted) list, using with li creates bullets-->
     
-            <ul class="no-bullets">
-                <li> <input type="checkbox"> <a href="#">Current Mineral Exploration Licenses</a> </li>
-                <li> <input type="checkbox"> <a href="#">Cancelled Mineral Exploraiton Licenses</a></li>
-                <li> <input type="checkbox"> <a href="#">Historic Mineral Exploration Licenses</a>
-                    <ul class="no-bullets">
-                        <li> 
-                            <input type="date" name="HistDataDate" min="1970-01-01" max="2022-12-31">
-                            <input type="submit" value="Search"/>
-                        </li>
-                    </ul>
-                </li>
+            <ul class="no-bullets-list">
+                <li> <a href="#">Current Mineral Exploration Licenses</a> </li>
+                <li> <a href="#">Cancelled Mineral Exploraiton Licenses</a> </li>
+                <li> <a href="#">Historic Mineral Exploration Licenses</a> </li>
             </ul>
             
             <h3>
                 Historic Data
             </h3>
     
-            <ul class="no-bullets">
-                <li> <input type="checkbox"> <a href=""> Surfical Geochemistry </a> </li>
-                <li> <input type="checkbox"> <a href=""> Drilling </a> </li>
-                <li> <input type="checkbox"> <a href=""> NI 43-101 Mineral Assessment Reports </a> </li>
-                <li> <input type="checkbox"> <a href=""> Geophysics </a> </li>
-                <li> <input type="checkbox"> <a href=""> Maps </a> </li>
+            <ul class="no-bullets-list">
+                <li> <a href="#"> Surfical Geochemistry </a> </li>
+                <li> <a href="#"> Drilling </a> </li>
+                <li> <a href="#"> NI 43-101 Mineral Assessment Reports </a> </li>
+                <li> <a href="#"> Geophysics </a> </li>
+                <li> <a href="#"> Maps </a> </li>
             </ul>
     
             <h3>
                 Investors
             </h3>
     
-            <!-- List within a list allows me to move the inner list (search bars) in -->
-    
-            <ul class="no-bullets">
-                <li> <input type="checkbox"> <a href="#">Share Price</a></li>
-                <li> <input type="checkbox"> <a href="#">Market Capital</a></li>
-                <li> <input type="checkbox"> <a href="#">Share Price Change</a>
-                    <ul class="no-bullets">
-                        <li> 
-                            <input type="date" name="PCFrom" min="2010-01-01" max="2022-12-31">                            
-                            <a> to </a>
-                            <input type="date" name="PCTo" min="2010-01-01" max="2022-12-31">  
-                            <input type="submit" value="Search"/>
-                        </li>
-                    </ul>
-                </li>
+            <ul class="no-bullets-list">
+                <li> <a href="#">Share Price</a></li>
+                <li> <a href="#">Market Capital</a></li>
+                <li> <a href="#">Share Price Change</a></li>
             </ul>
     
         </aside>
 
     </main>
-<!--
-     <div class="container">
-        <div class="menu-box" id="menu">
-            <div class="right-links">
-                <a href="#">Get Started</a>
-                <img src="images/misc/close.png" onclick="closemenu()" alt="close button">
-            </div>
-            <div class="menu-links">
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Our Products</a>
-                <a href="#">Book A Service</a>
-                <a href="#">Contact Us</a>
 
-            </div>
-        </div>
-    </div>
--->
     <!-- JAVASCRIPT TO MOVE THE MENU UP AND DOWN -->
 
-    <script>
+    <script type="text/javascript">
     
         var togglemenu = document.getElementById("togglemenu");
 
         function closemenu(){
-            togglemenu.style.top = "-100vh";
+            togglemenu.style.right = "-1000px";
         }
 
         function openmenu(){
-            menu.style.top = "17%";
+            togglemenu.style.right = "0px";
         }
 
     </script>
-<!--
-    <script>
-    
-        var menu = document.getElementById("menu");
-
-        function closemenu(){
-            menu.style.top = "-100vh";
-        }
-
-        function openmenu(){
-            menu.style.top = "17%";
-        }
-
-    </script>
--->
 
 </body>
 
