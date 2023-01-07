@@ -6,11 +6,16 @@
 
 <head>
 
+    <!-- CW: Meta tag defines metadata about HTML document -->
+
     <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
     <title> GetCodingProjectProposal </title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Link the css stylesheet -->
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -18,6 +23,43 @@
 
 <body> 
 
+    <div class="container">
+        <!-- I WANT THIS IN THE UPPER RHS OF THE NAV BAR -->
+        <img src="images/misc/menu.png" class="menu-icon" onclick="openmenu()" alt="drop down menu button">
+        <!-- I WANT THIS TO SHOW MY ASIDE TAB -->
+        <div class="menu-box" id="menu">
+            <div class="right-links">
+                <a href="#">Get Started</a>
+                <img src="images/misc/close.png" onclick="closemenu()" alt="close button">
+            </div>
+            <!-- THIS IS ALL MY OPTIONS IN THE CURRENT ASIDE I HAVE-->
+            <div class="menu-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Our Products</a>
+                <a href="#">Book A Service</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT TO MOVE THE MENU UP AND DOWN -->
+
+    <script>
+        
+        var menu = document.getElementById("menu");
+
+        function closemenu(){
+            menu.style.top = "-100vh";
+        }
+
+        function openmenu(){
+            menu.style.top = "17%";
+        }
+
+    </script>
+    
     <!-- CW: The nav tag defines a set of navigation links  -->
 
     <nav> 
@@ -39,7 +81,7 @@
         
         <!-- Aside tag defines some content aside from the content it is placed in, often placed as a side bar -->
 
-        <aside>
+        <aside class="menubar">
 
             <h2>
                 Toggle Fields in Map
