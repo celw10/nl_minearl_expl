@@ -13,7 +13,7 @@
 
     <title> GetCodingProjectProposal </title>
 
-    <!-- Link the css stylesheet -->
+    <!-- CW: Link the css stylesheet -->
 
     <link rel="stylesheet" href="style.css">
 
@@ -22,6 +22,21 @@
 <!-- CW: The body is where all the content that you see on the page goes. -->
 
 <body> 
+
+    <!-- CW: The nav tag defines a set of navigation links  -->
+
+    <nav> 
+
+        <!-- CW: The input tag specifies an input field where a user may enter data -->
+
+        <input type="search" name="q" placeholder="Search licenses, companies, dates, data type, ect." />
+        <input type="submit" value="Go!" />
+
+        <!-- CW: Image of search menu using JavaScript for drop down animation -->
+
+        <img src="images/misc/menu.png" onclick="openmenu()" alt="drop down menu button">
+
+    </nav>
 
     <div class="container">
         <!-- I WANT THIS IN THE UPPER RHS OF THE NAV BAR -->
@@ -44,10 +59,81 @@
         </div>
     </div>
 
+    <!-- CW: The main tage specifies the main content of a document -->
+
+    <main>
+        
+        <img class = "map" src="/Users/christopherwilliams/Documents/1_PROFESSIONAL/0_Courses/GetCoding/02QGIS/Images/230102_TmpImage_GeoreferencedClaims.jpg" alt="Location of GIS Application?">
+        
+        <!-- Aside tag defines some content aside from the content it is placed in, often placed as a side bar -->
+
+    </main>
+
+    <aside>
+
+        <h2>
+            Toggle Fields in Map
+        </h2>
+
+        <h3> 
+            Exploration Licenses
+        </h3>
+
+        <!--  CW: ul defines an unordered (bulleted) list, using with li creates bullets-->
+
+        <ul class="no-bullets">
+            <li> <input type="checkbox"> <a href="#">Current Mineral Exploration Licenses</a> </li>
+            <li> <input type="checkbox"> <a href="#">Cancelled Mineral Exploraiton Licenses</a></li>
+            <li> <input type="checkbox"> <a href="#">Historic Mineral Exploration Licenses</a>
+                <ul class="no-bullets">
+                    <li> 
+                        <input type="date" name="HistDataDate" min="1970-01-01" max="2022-12-31">
+                        <input type="submit" value="Search"/>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>
+            Historic Data
+        </h3>
+
+        <ul class="no-bullets">
+            <li> <input type="checkbox"> <a href=""> Surfical Geochemistry </a> </li>
+            <li> <input type="checkbox"> <a href=""> Drilling </a> </li>
+            <li> <input type="checkbox"> <a href=""> NI 43-101 Mineral Assessment Reports </a> </li>
+            <li> <input type="checkbox"> <a href=""> Geophysics </a> </li>
+            <li> <input type="checkbox"> <a href=""> Maps </a> </li>
+        </ul>
+
+        <h3>
+            Investors
+        </h3>
+
+        <!-- List within a list allows me to move the inner list (search bars) in -->
+
+        <ul class="no-bullets">
+            <li> <input type="checkbox"> <a href="#">Share Price</a></li>
+            <li> <input type="checkbox"> <a href="#">Market Capital</a></li>
+            <li> <input type="checkbox"> <a href="#">Share Price Change</a>
+                <ul class="no-bullets">
+                    <li> 
+                        <input type="date" name="PCFrom" min="2010-01-01" max="2022-12-31">                            
+                        <a> to </a>
+                        <input type="date" name="PCTo" min="2010-01-01" max="2022-12-31">  
+                        <input type="submit" value="Search"/>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+
+      </aside>
+
     <!-- JAVASCRIPT TO MOVE THE MENU UP AND DOWN -->
 
     <script>
-        
+    
         var menu = document.getElementById("menu");
 
         function closemenu(){
@@ -59,90 +145,6 @@
         }
 
     </script>
-    
-    <!-- CW: The nav tag defines a set of navigation links  -->
-
-    <nav> 
-
-        <!-- CW: The input tage specifies an input field where a user may enter data -->
-
-        <input type="search" name="q" placeholder="Search licenses, companies, dates, data type, ect." />
-        <input type="submit" value="Go!" />
-
-        <!-- PUT THE DORPDOWN MENU HERE LIKE WHAT I SEEN ONLINE -->
-
-    </nav>
-
-    <!-- CW: The main tage specifies the main content of a document -->
-
-    <main>
-        
-        <img class = "map" src="/Users/christopherwilliams/Documents/1_PROFESSIONAL/0_Courses/GetCoding/02QGIS/Images/230102_TmpImage_GeoreferencedClaims.jpg" alt="Location of GIS Application?">
-        
-        <!-- Aside tag defines some content aside from the content it is placed in, often placed as a side bar -->
-
-        <aside class="menubar">
-
-            <h2>
-                Toggle Fields in Map
-            </h2>
-    
-            <h3> 
-                Exploration Licenses
-            </h3>
-
-            <!--  CW: ul defines an unordered (bulleted) list, using with li creates bullets-->
-
-            <ul class="no-bullets">
-                <li> <input type="checkbox"> <a href="#">Current Mineral Exploration Licenses</a> </li>
-                <li> <input type="checkbox"> <a href="#">Cancelled Mineral Exploraiton Licenses</a></li>
-                <li> <input type="checkbox"> <a href="#">Historic Mineral Exploration Licenses</a>
-                    <ul class="no-bullets">
-                        <li> 
-                            <input type="date" name="HistDataDate" min="1970-01-01" max="2022-12-31">
-                            <input type="submit" value="Search"/>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            
-            <h3>
-                Historic Data
-            </h3>
-
-            <ul class="no-bullets">
-                <li> <input type="checkbox"> <a href=""> Surfical Geochemistry </a> </li>
-                <li> <input type="checkbox"> <a href=""> Drilling </a> </li>
-                <li> <input type="checkbox"> <a href=""> NI 43-101 Mineral Assessment Reports </a> </li>
-                <li> <input type="checkbox"> <a href=""> Geophysics </a> </li>
-                <li> <input type="checkbox"> <a href=""> Maps </a> </li>
-            </ul>
-
-            <h3>
-                Investors
-            </h3>
-
-            <!-- List within a list allows me to move the inner list (search bars) in -->
-
-            <ul class="no-bullets">
-                <li> <input type="checkbox"> <a href="#">Share Price</a></li>
-                <li> <input type="checkbox"> <a href="#">Market Capital</a></li>
-                <li> <input type="checkbox"> <a href="#">Share Price Change</a>
-                    <ul class="no-bullets">
-                        <li> 
-                            <input type="date" name="PCFrom" min="2010-01-01" max="2022-12-31">                            
-                            <a> to </a>
-                            <input type="date" name="PCTo" min="2010-01-01" max="2022-12-31">  
-                            <input type="submit" value="Search"/>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            
-
-          </aside>
-
-    </main>
 
 </body>
 

@@ -95,44 +95,67 @@ image.map{
 }
 /* STYLE */
 
-/* Constrain the maximum size of my image referenced to the width of the page */
-img {
-  max-width:80%;
-}
-
 /* Color and pad nav and aside (the comma beans both?? */
 /*nav, aside {
     background-color: white;
     padding: 1%;
 }*/
 
-/* Styling for nav */
-/*nav {
-    height: 24px;
-    background-color: #8c94c9;
-    align-items: center;
-    display: flex;
-    margin-bottom: 10px;
-}*/
 
-/* Styling for the search input on nav */
+/* STYLE NAV */
+
+/*
+Other ideas here:
+-> Extend parent width to 100 %
+-> Links to information about site i.e. "About us", "Contact us", "Site Tutorial", ect.
+-> Future GIS toggles in the dropdown menu aside child
+*/
+
+/* Navigation Parent */
+nav {
+  display: flex;
+  height: 32px;
+  width: 60%;
+  float: right;
+  background-color: white;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Input search child */
 nav input {
-    font-size: 100%;
-    height: 24px;
+  font-size: 100%;
+  height: 24px;
 }
 
-/* Styling for search bar and submit button */
-input[type="search"] {
-  flex: 1;
-}
-  
-input[type="submit"] {
-  flex: 1;
-  margin-left: 1rem;
-  background: #333;
+/* Dropdown aside menu child */
+nav img {
+  width: 35px;
   border: 0;
-  color: white;
+  cursor: pointer;
 }
+
+/* Search bar child */
+nav input[type="search"] {
+  flex: 5;
+  border: 1;
+  cursor: text;
+}
+
+/* Search button child */
+nav input[type="submit"] {
+  flex: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+  background: blue;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/**/
 
 /* Styling for main */
 main {
@@ -141,10 +164,11 @@ main {
 
 /* Styling for aside */
 aside {
-    flex: 1;
-    margin-left: 10px;
-    background-color: #9595b4;
-    max-width: 20%;
+  position: absolute;
+  top: relative;
+  margin-left: 10px;
+  background-color: #9595b4;
+  max-width: 20%;
 }
 
 /* Styling for outer lists */
