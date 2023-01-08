@@ -21,12 +21,7 @@
 
 <!-- CW: The body is where all the content that you see on the page goes. -->
 
-<body> 
-
-    <!-- 
-    HERE, I'll have background images which can be displayed by clicking different links in the aside-menu bar. 
-    This will simulate my GIS application in the background
-    -->
+<body id="background-image"> 
 
     <!-- CW: The nav tag defines a set of navigation links  -->
 
@@ -95,7 +90,7 @@
 
     </main>
 
-    <!-- JAVASCRIPT TO MOVE THE MENU UP AND DOWN -->
+    <!-- CW: JavaScript that changes the right css style of id "togglemenu" which is my aside tab -->
 
     <script type="text/javascript">
     
@@ -109,6 +104,18 @@
             togglemenu.style.right = "0px";
         }
 
+    </script>
+
+    <!-- CW: Javascriopt that changes the ID of the background photo based on menu selection -->
+
+    <script type="text/javascript">
+
+        function changeimage() {
+            var w = document.vafForm.make.selectedIndex;
+            var selected_text = document.vafForm.make.options[w].text;
+            document.getElementById('background-image').src="images/gis/" + selected_text + ".jpg";;
+        }
+        
     </script>
 
 </body>

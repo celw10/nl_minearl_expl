@@ -9,6 +9,13 @@
 
 /* STYLE BODY */
 
+body{
+  background: url("images/gis/CurrentClaimsExample.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; 
+}
 
 /* STYLE NAV */
 
@@ -25,7 +32,7 @@ nav {
   height: 32px;
   width: 50%;
   float: right;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.30);
   align-items: center;
   margin-bottom: 5px;
   margin-top: 5px;
@@ -74,7 +81,7 @@ nav input[type="submit"] {
 main {
   width: 100%;
   height: 100%;
-  background: white;
+  background: transparent;
   overflow: hidden;
 }
 
