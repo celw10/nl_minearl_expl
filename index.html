@@ -61,7 +61,7 @@
             <ul class="no-bullets-list">
                 <li> <a href="#" onclick="currentclaims()"> Current Mineral Exploration Licenses </a> </li>
                 <li> <a href="#"> Cancelled Mineral Exploraiton Licenses </a> </li>
-                <li> <a href="#"> Historic Mineral Exploration Licenses </a> </li>
+                <li> <a href="#" onclick="historicclaims()"> Historic Mineral Exploration Licenses </a> </li>
             </ul>
             
             <h3>
@@ -69,8 +69,8 @@
             </h3>
     
             <ul class="no-bullets-list">
-                <li> <a href="#"> Surfical Geochemistry </a> </li>
-                <li> <a href="#"> Drilling </a> </li>
+                <li> <a href="#" onclick="mineralshowings()"> Surfical Geochemistry </a> </li>
+                <li> <a href="#" onclick="drillcollars()"> Drilling </a> </li>
                 <li> <a href="#"> NI 43-101 Mineral Assessment Reports </a> </li>
                 <li> <a href="#"> Geophysics </a> </li>
                 <li> <a href="#"> Maps </a> </li>
@@ -122,6 +122,21 @@
 
             //alert() is useful to see how I'm changing my variables and for de-bugging//
             //alert(getComputedStyle(document.documentElement).getPropertyValue('--currentimg'))//
+        }
+
+        function historicclaims(){
+            //Change image path variable to show historic claims//
+            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--historicclaims'))
+        }
+
+        function drillcollars(){
+            //Change image path variable to show drill collars//
+            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--drillcollars'))
+        }
+
+        function mineralshowings(){
+            //Change image path variable to show MODS mineral showings//
+            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--minearlshowings'))
         }
 
     </script>

@@ -1,3 +1,12 @@
+/* VARIABLES */
+:root{
+  --currentclaims: url('../images/gis/CurrentClaimsExample.jpg');
+  --historicclaims: url('../images/gis/HistoricClaimsExample.jpg');
+  --minearlshowings: url('../images/gis/MODSExample.jpg');
+  --drillcollars: url('../images/gis/CurrentDrillingExample.jpg');
+  --currentimg: url('../images/gis/NL_Basemap.jpg');
+}
+
 /* CW: The * selector selets all elements */
 
 *{
@@ -8,11 +17,6 @@
 }
 
 /* STYLE BODY */
-
-:root{
-  --currentclaims: url('../images/gis/CurrentClaimsExample.jpg');
-  --currentimg: grey;
-}
 
 body{
   background: var(--currentimg);
