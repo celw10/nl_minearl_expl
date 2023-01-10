@@ -15,13 +15,13 @@
 
     <!-- CW: Link the css stylesheet -->
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <!-- CW: The body is where all the content that you see on the page goes. -->
 
-<body id="background-image"> 
+<body> 
 
     <!-- CW: The nav tag defines a set of navigation links  -->
 
@@ -59,9 +59,9 @@
             <!--  CW: ul defines an unordered (bulleted) list, using with li creates bullets-->
     
             <ul class="no-bullets-list">
-                <li> <a href="#">Current Mineral Exploration Licenses</a> </li>
-                <li> <a href="#">Cancelled Mineral Exploraiton Licenses</a> </li>
-                <li> <a href="#">Historic Mineral Exploration Licenses</a> </li>
+                <li> <a href="#" onclick="currentclaims()"> Current Mineral Exploration Licenses </a> </li>
+                <li> <a href="#"> Cancelled Mineral Exploraiton Licenses </a> </li>
+                <li> <a href="#"> Historic Mineral Exploration Licenses </a> </li>
             </ul>
             
             <h3>
@@ -110,12 +110,20 @@
 
     <script type="text/javascript">
 
-        function changeimage() {
-            var w = document.vafForm.make.selectedIndex;
-            var selected_text = document.vafForm.make.options[w].text;
-            document.getElementById('background-image').src="images/gis/" + selected_text + ".jpg";;
+        //Extract a variable from my css :root variables//
+        //var imgpath = getComputedStyle(document.documentElement).getPropertyValue('--imgsrc')//
+
+        //Change a variable in my css :root variables//
+        //document.documentElement.style.setProperty('--imgsrc', '')//
+
+        function currentclaims(){
+            //Here, I am change the variable currentimg to currentclaims//
+            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--currentclaims'))
+
+            //alert() is useful to see how I'm changing my variables and for de-bugging//
+            //alert(getComputedStyle(document.documentElement).getPropertyValue('--currentimg'))//
         }
-        
+
     </script>
 
 </body>

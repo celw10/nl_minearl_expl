@@ -9,8 +9,13 @@
 
 /* STYLE BODY */
 
+:root{
+  --currentclaims: url('../images/gis/CurrentClaimsExample.jpg');
+  --currentimg: grey;
+}
+
 body{
-  background: url("images/gis/CurrentClaimsExample.jpg");
+  background: var(--currentimg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
