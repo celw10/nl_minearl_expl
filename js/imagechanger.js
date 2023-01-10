@@ -1,3 +1,5 @@
+//This doesn't work//
+
 let myImage = document.querySelector('img')
 
 myImage.onclick = function(){
