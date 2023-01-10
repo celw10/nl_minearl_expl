@@ -2,6 +2,10 @@
 
 <html lang="en"> 
 
+<!-- Import funcitons in javascript -->
+
+<script type="text/javascript" src="js/scripts.js"> </script>
+
 <!-- CW: The header is the site name. -->
 
 <head>
@@ -90,7 +94,10 @@
 
     </main>
 
-    <!-- CW: JavaScript that changes the right css style of id "togglemenu" which is my aside tab -->
+    <!-- 
+        CW: JavaScript that changes the right css style of id "togglemenu" which is my aside tab
+        Why can't I put this one in scripts.js? Is it because i get element by ID? but I call vairables in css?
+     -->
 
     <script type="text/javascript">
     
@@ -102,41 +109,6 @@
 
         function openmenu(){
             togglemenu.style.right = "0px";
-        }
-
-    </script>
-
-    <!-- CW: Javascriopt that changes the ID of the background photo based on menu selection -->
-
-    <script type="text/javascript">
-
-        //Extract a variable from my css :root variables//
-        //var imgpath = getComputedStyle(document.documentElement).getPropertyValue('--imgsrc')//
-
-        //Change a variable in my css :root variables//
-        //document.documentElement.style.setProperty('--imgsrc', '')//
-
-        function currentclaims(){
-            //Here, I am change the variable currentimg to currentclaims//
-            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--currentclaims'))
-
-            //alert() is useful to see how I'm changing my variables and for de-bugging//
-            //alert(getComputedStyle(document.documentElement).getPropertyValue('--currentimg'))//
-        }
-
-        function historicclaims(){
-            //Change image path variable to show historic claims//
-            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--historicclaims'))
-        }
-
-        function drillcollars(){
-            //Change image path variable to show drill collars//
-            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--drillcollars'))
-        }
-
-        function mineralshowings(){
-            //Change image path variable to show MODS mineral showings//
-            document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--minearlshowings'))
         }
 
     </script>
