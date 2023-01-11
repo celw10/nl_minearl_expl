@@ -94,6 +94,14 @@ main {
   overflow: hidden;
 }
 
+
+/* Styling for text to test search bar */
+main p{
+  width: 20%;
+  float: left;
+  font-size: 150%;
+}
+
 /* Styling for aside child */
 .aside-menu {
   position: relative;

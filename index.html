@@ -2,53 +2,61 @@
 
 <html lang="en"> 
 
-<!-- Import funcitons in javascript -->
-
-<script type="text/javascript" src="js/displaydata.js"> </script>
-
-<!-- CW: The header is the site name. -->
+<!-- The header is the site name. -->
 
 <head>
 
-    <!-- CW: Meta tag defines metadata about HTML document -->
+    <!-- Meta tag defines metadata about HTML document -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
+    <!-- Site name -->
+
     <title> GetCodingProjectProposal </title>
 
-    <!-- CW: Link the css stylesheet -->
+    <!-- Load or link javascript(s) here: defer tag means javascript is executed after HTML parser is complete (i.e. HTML is read top to bottom)-->
+
+    <script type="text/javascript" src="js/displaydata.js" defer> </script>  
+    <script type="text/javascript" src="js/searchdata.js" defer> </script>
+    <script type="text/javascript" src="js/toggleaside.js" defer> </script>
+
+    <!-- Link the css stylesheet -->
 
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<!-- CW: The body is where all the content that you see on the page goes. -->
+<!-- The body is where all the content that you see on the page goes. -->
 
 <body> 
 
-    <!-- CW: The nav tag defines a set of navigation links  -->
+    <!-- The nav tag defines a set of navigation links  -->
 
     <nav> 
 
-        <!-- CW: The input tag specifies an input field where a user may enter data -->
+        <!-- The input tag specifies an input field where a user may enter data -->
 
-        <input id="search" type="search" type="text" class="input" placeholder="Search years 2022-2000..." />
-        <input type="submit" value="search" class="search" />
+        <input type="search" data-search="" placeholder="Type something in, search button has no funcitonality" />
+        <input type="submit" value="search" onclick="searchdata()"/>
 
-        <!-- CW: Image with JavaScript function for drop down animation -->
+        <!-- Image with JavaScript function for drop down animation -->
 
         <img src="images/misc/menu.png" onclick="openmenu()" alt="drop down menu button">
 
     </nav>
 
-    <!-- CW: The main tag specifies the main content of a document -->
+    <!-- The main tag specifies the main content of a document -->
     
     <main>
 
+        <!-- Print whatever was searched here, test funciton -->
+
+        <p id="search-output"> </p>
+
         <aside class="aside-menu" id="togglemenu">
 
-            <!-- CW: Image with JavaScript funciton for hide menu animation-->
+            <!--   Image with JavaScript funciton for hide menu animation-->
 
             <img src="images/misc/close.png" onclick="closemenu()" alt="close button">
 
@@ -60,7 +68,7 @@
                 Exploration Licenses
             </h3>
     
-            <!--  CW: ul defines an unordered (bulleted) list, using with li creates bullets-->
+            <!-- ul defines an unordered (bulleted) list, using with li creates bullets-->
     
             <ul class="no-bullets-list">
                 <li> <a href="#" onclick="currentclaims()"> Current Mineral Exploration Licenses </a> </li>
@@ -94,24 +102,21 @@
 
     </main>
 
-    <!-- 
-        CW: JavaScript that changes the right css style of id "togglemenu" which is my aside tab
-        Why can't I put this one in scripts.js? Is it because i get element by ID? but I call vairables in css?
-     -->
-
-    <script type="text/javascript">
+    <!--
+        I'm not going to have the change to implement this before our meeting. 
+        Essentially what i want to do here is to have a "serach results" tab that enters the screen from the bottom once data is searched for. 
+        It will automatically close out the aside tab
+        It will behave similar to the aside tab as it will have a "x" image that closes the search results
     
-        var togglemenu = document.getElementById("togglemenu");
+    <footer class="footer-search-results" id="togglesearch">
 
-        function closemenu(){
-            togglemenu.style.right = "-1000px";
-        }
+        <h2>
+            Search footer-search-results
+        </h2>
 
-        function openmenu(){
-            togglemenu.style.right = "0px";
-        }
+    </footer>
+    -->
 
-    </script>
 
 </body>
 

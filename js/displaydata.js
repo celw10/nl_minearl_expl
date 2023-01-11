@@ -1,4 +1,4 @@
-// CHANGE DISPLAYED DATA ON MAP //
+// Change background figures on toggle fields menu, mimics toggling fields in a GIS API //
 
 //Extract a variable from my css :root variables//
 //var imgpath = getComputedStyle(document.documentElement).getPropertyValue('--imgsrc')//
