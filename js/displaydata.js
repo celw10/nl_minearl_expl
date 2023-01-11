@@ -1,3 +1,5 @@
+// CHANGE DISPLAYED DATA ON MAP //
+
 //Extract a variable from my css :root variables//
 //var imgpath = getComputedStyle(document.documentElement).getPropertyValue('--imgsrc')//
 
