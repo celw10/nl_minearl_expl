@@ -10,7 +10,7 @@
 //alert(getComputedStyle(document.documentElement).getPropertyValue('--currentimg'))//
 
 // Change the image path variable to show current claims //
-function currentclaims(){
+export function currentclaims(){
 
     document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--currentclaims'))
 }
