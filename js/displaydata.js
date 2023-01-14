@@ -27,4 +27,4 @@ function mineralshowings(){
 }
 
 // Export funcitons
-export { resetmap, currentclaims, historicclaims, drillcollars, mineralshowings };
+//export { resetmap, currentclaims, historicclaims, drillcollars, mineralshowings };

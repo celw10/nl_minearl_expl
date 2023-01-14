@@ -55,7 +55,7 @@ nav input {
 
 /* DImage controling dropdown aside */
 nav img {
-  width: 35px;
+  width: 24px;
   border: 0;
   margin-left: 5%;
   margin-right: 5px;
@@ -91,22 +91,17 @@ main {
   overflow: hidden;
 }
 
-/* TEMP Styling for text to test search bar */
-main p{
-  width: 20%;
-  float: left;
-  font-size: 150%;
-}
+/* ASIDE STYLINE */
 
 /* Styling for aside child */
-.aside-menu {
+.menu {
   font-size: 1.2vw;
-  position: relative;
+  position: absolute;
   float: right;
-  right: 0px;
+  right: -1000px;
   margin: 5px;
   background-color: lightgrey;
-  width: 28%;
+  max-width: 30%;
   border-radius: 5px;
   outline: solid;
   outline-width: 1px;
@@ -115,22 +110,22 @@ main p{
 }
 
 /* Styling for close menu icon in aside tab */
-.aside-menu img{
-  width: 35px;
+.menu img{
+  width: 24px;
   float: right;
   margin: 5px;
   cursor: pointer;
 }
 
 /* Styling for h2 child */
-.aside-menu h2 {
+.menu h2 {
   align-items: center;
   font-size: 125%;
   margin-left: 5px;
 }
 
 /* Styling for h3 children */
-.aside-menu h3 {
+.menu h3 {
   align-items: center;
   font-size: 100%;
   margin-left: 5px;
@@ -155,8 +150,48 @@ main p{
   font-weight: 700;
 }
 
-/* Styling for outer lists */
+/* Styling for lists */
 ul li {
   margin: 5px;
   padding: 0px;
+}
+
+/* FOOTER */
+.search-results{
+  font-size: 1.2vw;
+  position: absolute;
+  bottom: -1000px;
+  background-color: lightgrey;
+  width: 98%;
+  margin: 1%;
+  max-height: 80%;
+  border-radius: 5px;
+  outline: solid;
+  outline-width: 1px;
+  outline-color: black;
+  transition: bottom 1s;
+  overflow-y: scroll;
+}
+
+/* Styling for exit button */
+.search-results img{
+  width: 24px;
+  float: right;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Styling for search results heading */
+.search-results h2{
+  align-items: center;
+  font-size: 125%;
+  margin-left: 5px;
+}
+
+/* Styling for temp search output text, large font to exhibit scroll bar once search output reaches maximum */
+.search-results p{
+  display: flex;
+  flex: auto;
+  font-size: 1000%;
+  margin: 5px;
 }

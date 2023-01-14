@@ -12,10 +12,10 @@
     <title> GetCodingProjectProposal </title>
 
     <!-- Link javascript: defer tag means javascript is executed after HTML parser is complete (i.e. HTML is read top to bottom)-->
-    <script src="js/app.js" type="module"> </script>
-    <!--<script type="text/javascript" src="js/displaydata.js" defer> </script>  
+    <!--<script src="js/app.js" type="module"> </script>-->
+    <script type="text/javascript" src="js/displaydata.js" defer> </script>  
     <script type="text/javascript" src="js/searchdata.js" defer> </script>
-    <script type="text/javascript" src="js/toggleaside.js" defer> </script>-->
+    <script type="text/javascript" src="js/togglemenus.js" defer> </script>
 
     <!-- Link css -->
     <link rel="stylesheet" href="css/style.css">
@@ -38,28 +38,23 @@
             <nav> 
 
                 <!-- Search and submit query funcitonality -->
-                <input type="search" data-search="" placeholder="Type something in, search button has no funcitonality" />
-                <input type="submit" value="search" onclick="searchdata()"/>
+                <input type="search" data-search="" />
+                <input type="submit" value="search" onclick="opensearch()"/>
 
                 <!-- Drop down menu -->
                 <img src="images/misc/menu.png" onclick="openmenu()" alt="drop down menu button">
 
             </nav>
-
-            <!-- The main tag specifies the main content of a document -->
             
             <main>
 
-                <!-- Print whatever was searched here, test funciton -->
+                <!-- Aside tag used as a menu -->
+                <aside class="menu" id="asidemenu">
 
-                <p id="search-output"> </p>
-
-                <aside class="aside-menu" id="togglemenu">
-
-                    <!--   Image with JavaScript funciton for hide menu animation-->
-
+                    <!-- Close aside menu -->
                     <img src="images/misc/close.png" onclick="closemenu()" alt="close button">
 
+                    <!-- Headers and list of (hopeful) future applicaiton functionalities -->
                     <h2>
                         Toggle Fields in Map
                     </h2>
@@ -71,8 +66,6 @@
                     <h3> 
                         Exploration Licenses
                     </h3>
-            
-                    <!-- ul defines an unordered (bulleted) list, using with li creates bullets-->
             
                     <ul class="no-bullets-list">
                         <li> <a href="#" onclick="currentclaims()"> Current Mineral Exploration Licenses </a> </li>
@@ -103,25 +96,27 @@
                     </ul>
             
                 </aside>
+
+                <!-- Footer tag used as search results -->
+                <footer class="search-results" id="footerserach">
+
+                    <!-- Close search results -->
+                    <img src="images/misc/close.png" onclick="closesearch()" alt="close button">
+
+                    <h2>
+                        Search Results:
+                    </h2>
+
+                    <!-- Linked to search bar to display what is typed in -->
+                    <p id="search-output"> </p>
+
+                </footer>
+
             </main>
+
         </div>
+
     </div>
-
-    <!--
-        I'm not going to have the change to implement this before our meeting. 
-        Essentially what i want to do here is to have a "serach results" tab that enters the screen from the bottom once data is searched for. 
-        It will automatically close out the aside tab
-        It will behave similar to the aside tab as it will have a "x" image that closes the search results
-    
-    <footer class="footer-search-results" id="togglesearch">
-
-        <h2>
-            Search footer-search-results
-        </h2>
-
-    </footer>
-    -->
-
 
 </body>
 
