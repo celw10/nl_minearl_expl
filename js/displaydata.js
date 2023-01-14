@@ -1,34 +1,30 @@
-// Change background figures on toggle fields menu, mimics toggling fields in a GIS API //
+// Export defined functions
+//export {resetmap, currentclaims, historicclaims, drillcollars, mineralshowings}
 
-//Extract a variable from my css :root variables//
-//var imgpath = getComputedStyle(document.documentElement).getPropertyValue('--imgsrc')//
-
-//Change a variable in my css :root variables//
-//document.documentElement.style.setProperty('--imgsrc', '')//
-
-//alert() is useful to see how I'm changing my variables and for de-bugging//
-//alert(getComputedStyle(document.documentElement).getPropertyValue('--currentimg'))//
-
-// Change the image path variable to show current claims //
-export function currentclaims(){
-
-    document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--currentclaims'))
+// Reset map to basemap
+function resetmap(){
+    document.getElementById('gis').src = "images/gis/NL_Basemap.jpg"
 }
 
-// Change the image path variable to show historic claims //
+// Toggle current claims
+function currentclaims(){
+    document.getElementById('gis').src = "images/gis/CurrentClaimsExample.jpg"
+}
+
+// Toggle historic claims
 function historicclaims(){
-
-    document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--historicclaims'))
+    document.getElementById('gis').src = "images/gis/HistoricClaimsExample.jpg"
 }
 
-// Change the image path variable to show drill collars //
+// Toggle drill collars
 function drillcollars(){
-
-    document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--drillcollars'))
+    document.getElementById('gis').src = "images/gis/CurrentDrillingExample.jpg"
 }
 
-// Change the image path variable to show the MODS mineral showings //
+// Toggle mineral showings
 function mineralshowings(){
-
-    document.documentElement.style.setProperty('--currentimg', getComputedStyle(document.documentElement).getPropertyValue('--minearlshowings'))
+    document.getElementById('gis').src = "images/gis/MODSExample.jpg"
 }
+
+// Export funcitons
+export { resetmap, currentclaims, historicclaims, drillcollars, mineralshowings };

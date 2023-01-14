@@ -1,39 +1,38 @@
-/* VARIABLES */
-:root{
-  --currentclaims: url('../images/gis/CurrentClaimsExample.jpg');
-  --historicclaims: url('../images/gis/HistoricClaimsExample.jpg');
-  --minearlshowings: url('../images/gis/MODSExample.jpg');
-  --drillcollars: url('../images/gis/CurrentDrillingExample.jpg');
-  --currentimg: url('../images/gis/NL_Basemap.jpg');
-}
-
-/* CW: The * selector selets all elements */
-
+/* Font family for entire document */
 *{
   font-family: sans-serif;
-  border-width: 1px;
-  border-style: dashed;
-  border-color: transparent;
 }
 
-/* STYLE BODY */
+/* CONTAINER STYLING */
 
-body{
-  background: var(--currentimg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover; 
+/* Ensuring overlying divs are pushed to the page extents */
+html, body{
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
 }
 
-/* STYLE NAV */
+/* Container div spanning entire page extent, GIS API in this DIV */
+.container{
+  height: 100vh;
+}
 
-/*
-Other ideas here:
--> Extend parent width to 100 %
--> Links to information about site i.e. "About us", "Contact us", "Site Tutorial", ect.
--> Future GIS toggles in the dropdown menu aside child
-*/
+/* Background image spanning page enxtent, placeholder for GIS API */
+.background-img{
+  height: 100vh;
+  width: 100%;
+}
+
+/* Container div for all subsequent overlay elements, nav, aside, footer, main, ect.*/
+.overlay{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 100%;
+}
+
+/* NAV STYLING */
 
 /* Navigation Parent */
 nav {
@@ -43,17 +42,18 @@ nav {
   float: right;
   background-color: rgba(245, 245, 245, 0.30);
   align-items: center;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 1.1vw;
 }
 
-/* Input search child */
+/* Input search child - styling both the button and search bar */
 nav input {
   font-size: 100%;
   height: 24px;
 }
 
-/* Dropdown aside menu child */
+/* DImage controling dropdown aside */
 nav img {
   width: 35px;
   border: 0;
@@ -82,20 +82,16 @@ nav input[type="submit"] {
   cursor: pointer;
 }
 
-/**/
-
-/* STYLE MAIN */
+/* MAIN STYLING */
 
 /* Styling for main parent */
 main {
   width: 100%;
-  height: 100%;
-  background: transparent;
+  height: auto;
   overflow: hidden;
 }
 
-
-/* Styling for text to test search bar */
+/* TEMP Styling for text to test search bar */
 main p{
   width: 20%;
   float: left;
@@ -104,12 +100,13 @@ main p{
 
 /* Styling for aside child */
 .aside-menu {
+  font-size: 1.2vw;
   position: relative;
   float: right;
   right: 0px;
   margin: 5px;
   background-color: lightgrey;
-  width: 30%;
+  width: 28%;
   border-radius: 5px;
   outline: solid;
   outline-width: 1px;
@@ -158,38 +155,8 @@ main p{
   font-weight: 700;
 }
 
-
-
 /* Styling for outer lists */
 ul li {
   margin: 5px;
   padding: 0px;
-}
-
-
-.menu-links a{
-  text-decoration: none;
-  color: white;
-  display: block;
-  width: fit-content;
-  margin: 30px 0;
-  font-size: 36px;
-}
-
-.menu-links a::after{
-  content: '';
-  width: 40px;
-  height: 5px; 
-  background: #f92537;
-  display: hidden;
-  margin-left: 10px;
-  margin-bottom: 5px;
-}
-
-.menu-links a:hover{
-  font-weight: 700;
-}
-
-.menu-links a:hover::after{
-  display: inline-block;
 }
