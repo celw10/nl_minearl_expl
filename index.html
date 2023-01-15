@@ -102,13 +102,39 @@
 
                     <!-- Close search results -->
                     <img src="images/misc/close.png" onclick="closesearch()" alt="close button">
-
+                    
+                    <!-- Linked to search bar to display what is typed in Display in the same line?-->
                     <h2>
-                        Search Results:
+                        Search Results: <p id="search-output"> </p>
                     </h2>
 
-                    <!-- Linked to search bar to display what is typed in -->
-                    <p id="search-output"> </p>
+                    <!-- Search output in tabular format -->
+                    <table class="tabular-results">
+                        <!-- First table row -->
+                        <tr>
+                            <!-- Unique table headers, governs column sizes -->
+                            <th width="26%"> Company </th>
+                            <th width="14%"> License Number </th>
+                            <th width="11%"> Location </th>
+                            <th width="11%"> Status </th>
+                            <th width="11%"> Active From </th>
+                            <th width="11%"> Active To </th>
+                            <th width="16%"> Total Expenditures </th>
+                        </tr>
+
+                        <template>
+                            <tr class="search-row">
+                                <td class="company"></td>
+                                <td class="license"></td>
+                                <td class="location"></td>
+                                <td class="status"></td>
+                                <td class="active-from"></td>
+                                <td class="active-to"></td>
+                                <td class="total-exp"></td>
+                            </tr>
+                        </template>
+
+                    </table>
 
                 </footer>
 

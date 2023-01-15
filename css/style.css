@@ -5,7 +5,7 @@
 
 /* CONTAINER STYLING */
 
-/* Ensuring overlying divs are pushed to the page extents */
+/* Ensuring overlying divs are pushed to the page extents*/
 html, body{
   height: 100vh;
   margin: 0;
@@ -101,7 +101,7 @@ main {
   right: -1000px;
   margin: 5px;
   background-color: lightgrey;
-  max-width: 30%;
+  width: 30%;
   border-radius: 5px;
   outline: solid;
   outline-width: 1px;
@@ -135,7 +135,7 @@ main {
 .no-bullets-list{
   list-style-type: none;
   padding: 0;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 /* Add styling to menu options */
@@ -170,7 +170,7 @@ ul li {
   outline-width: 1px;
   outline-color: black;
   transition: bottom 1s;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 /* Styling for exit button */
@@ -185,13 +185,31 @@ ul li {
 .search-results h2{
   align-items: center;
   font-size: 125%;
-  margin-left: 5px;
+  margin-left: 1%;
 }
 
 /* Styling for temp search output text, large font to exhibit scroll bar once search output reaches maximum */
 .search-results p{
   display: flex;
   flex: auto;
-  font-size: 1000%;
-  margin: 5px;
+  margin: 1%;
+}
+
+/* Styling for search results table */
+.tabular-results{
+  width: 98%;
+  margin: 1%;
+  border-collapse: collapse;
+}
+
+/* Styling for rows and columns of results table */
+.tabular-results td, th{
+  border: 1px solid black;
+  text-align: left;
+  padding: 1%;
+}
+
+/* Shading for every odd row */ 
+.tabular-results tr:nth-child(even){
+  background-color: grey;
 }

@@ -1,4 +1,5 @@
-// Search thorugh database using a listner function, no search button functionality //
+// Fetch historic claims data
+fetch("../data/HistoricClaims_Test.geojson").then(res => res.json()).then(data => {})
 
 // Select the search bar //
 const searchInput = document.querySelector("[data-search]")
