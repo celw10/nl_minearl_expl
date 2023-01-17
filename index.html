@@ -38,7 +38,7 @@
             <nav> 
 
                 <!-- Search and submit query funcitonality -->
-                <input type="search" data-search="" />
+                <input type="search" data-search/>
                 <input type="submit" value="search" onclick="opensearch()"/>
 
                 <!-- Drop down menu -->
@@ -122,18 +122,20 @@
                             <th width="16%"> Total Expenditures </th>
                         </tr>
 
-                        <template>
+                        <div data-user-todo></div>
+
+                        <template data-template>
                             <tr class="search-row">
-                                <td class="company"></td>
-                                <td class="license"></td>
-                                <td class="location"></td>
+                                <td class="company" data-title></td>
+                                <td class="license" data-userId></td>
+                                <td class="location" data-id></td>
                                 <td class="status"></td>
                                 <td class="active-from"></td>
                                 <td class="active-to"></td>
-                                <td class="total-exp"></td>
+                                <td class="total-exp" data-completed></td>
                             </tr>
                         </template>
-
+                        
                     </table>
 
                 </footer>

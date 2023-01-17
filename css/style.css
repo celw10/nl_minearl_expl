@@ -213,3 +213,8 @@ ul li {
 .tabular-results tr:nth-child(even){
   background-color: grey;
 }
+
+/* Hide search results */
+.hide{ 
+  display: none;
+}
