@@ -12,7 +12,11 @@
     <title> GetCodingProjectProposal </title>
 
     <!-- Link javascript: defer tag means javascript is executed after HTML parser is complete (i.e. HTML is read top to bottom)-->
-    <!--<script src="js/app.js" type="module"> </script>-->
+    <!-- 
+        THIS DOESN'T WORK! Gives me CORS request block if I only try to bring in one file containing functinos defined elsewhere. 
+    <script src="js/app.js" type="module"> </script>
+    Haven't figured out hot to compress this import.
+    -->
     <script type="text/javascript" src="js/displaydata.js" defer> </script>  
     <script type="text/javascript" src="js/searchdata.js" defer> </script>
     <script type="text/javascript" src="js/togglemenus.js" defer> </script>
@@ -21,7 +25,6 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-
 
 <body> 
 
@@ -38,7 +41,7 @@
             <nav> 
 
                 <!-- Search and submit query funcitonality -->
-                <input type="search" data-search/>
+                <input type="search" id='search' data-search/>
                 <input type="submit" value="search" onclick="opensearch()"/>
 
                 <!-- Drop down menu -->
@@ -108,9 +111,22 @@
                         Search Results: <p id="search-output"> </p>
                     </h2>
 
-                    <!-- Search output in tabular format -->
+                    <!-- Implementation of a youtube dynamic search function -->
+                    <div class="user-cards" data-user-cards-container></div>
+                    <!-- Template allows later rendering of styling with javascript -->
+                    <template data-user-template>
+                        <div class="card">
+                            <div class="header" data-header></div>
+                            <div class="body" data-body></div>
+                        </div>
+                    </template>
+                    
+                    <!-- 
+                        Search output in tabular format 
+                        CAN I POPULATE A TABLE LIKE I DID IN THE ABOVE YOUTUBE EXAMPLE
+                    -->
                     <table class="tabular-results">
-                        <!-- First table row -->
+                        <!-- Table row -->
                         <tr>
                             <!-- Unique table headers, governs column sizes -->
                             <th width="26%"> Company </th>
@@ -121,21 +137,26 @@
                             <th width="11%"> Active To </th>
                             <th width="16%"> Total Expenditures </th>
                         </tr>
+                        <tr >
+                            <!-- Subsequent table rows -->
+                            <td> Gold Company </td>
+                            <td> 99999 </td>
+                            <td> Central NL </td>
+                            <td> Active </td>
+                            <td> 2018-09-12 </td>
+                            <td> - </td>
+                            <td> 1,287,190 </td>                        
+                        </tr>
+                        <tr >
+                            <td> Take The Card </td>
+                            <td> Example and Populate </td>
+                            <td> A </td>
+                            <td> Table </td>
+                            <td> Like </td>
+                            <td> This </td>
+                            <td> One </td>                        
+                        </tr>
 
-                        <div data-user-todo></div>
-
-                        <template data-template>
-                            <tr class="search-row">
-                                <td class="company" data-title></td>
-                                <td class="license" data-userId></td>
-                                <td class="location" data-id></td>
-                                <td class="status"></td>
-                                <td class="active-from"></td>
-                                <td class="active-to"></td>
-                                <td class="total-exp" data-completed></td>
-                            </tr>
-                        </template>
-                        
                     </table>
 
                 </footer>

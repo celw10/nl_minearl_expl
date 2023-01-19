@@ -1,46 +1,52 @@
-const datatemplate = document.querySelector("[data-template]")
-
-const datausertodo = document.querySelector("[data-user-todo]")
+//Referencing the styling of each individual card via template
+const userCardTemplate = document.querySelector("[data-user-template]")
+//Styling for card container div
+const userCardContainer = document.querySelector("[data-user-cards-container]")
 
 // Select the search bar //
 const searchInput = document.querySelector("[data-search]")
 
-let users = []
+//Initilize array filled by map
+let users = []; 
 
-// Add an event lister to the search bar //
-searchInput.addEventListener("input", (e) => {
-
-    // Extract the values typed into the search bar //
-    const value = e.target.value
-
-    // Output what is typed into seach bar on the console log //
-    //console.log(users)
-    users.forEach(user => {
-        const isVisible = user.title.includes(value) //|| user.userId.includes(value) || user.id.includes(value)
-        console.log(isVisible)
-        //user.element.classlist.toggle("hide", !isVisible)
-    })
-
-    //Print the input value const to an arbitrary (and temporary) locaiton on main //
-//    document.getElementById('search-output').innerHTML = value;
-})
-
-// Fetch some dummy 'to do' data to populate table
-fetch('https://jsonplaceholder.typicode.com/todos')
+// Fetch some dummy data to populate table
+fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then(data => {
+        //Fill users array
         users = data.map(user => {
-            const searchrow = datatemplate.content.cloneNode(true).children[0]
-            const company = searchrow.querySelector("[data-title]")
-            const license = searchrow.querySelector("[data-userId]")
-            const location = searchrow.querySelector("[data-id]")
-            const totalexp = searchrow.querySelector("[data-completed]")
-            company.textContent = user.title
-            license.textContent = user.userId
-            location.textContent = user.id
-            totalexp.textContent = user.completed
-            datausertodo.append(searchrow)
-            return { title: user.title, userId: user.userId, id: user.id, completed: user.completed, 
-                element: searchrow }
+            //What does this one do again? Re-watch section of video...
+            const card = userCardTemplate.content.cloneNode(true).children[0]
+            //Variable linked to data header through the DOM
+            const header = card.querySelector("[data-header]")
+            //Variable linked to data content through the DOM
+            const body = card.querySelector("[data-body]")
+            //Populate template header with name of each user
+            header.textContent = user.name
+            //Populate template body with email of each user 
+            body.textContent = user.email
+            //Again double check this bit in the video...
+            userCardContainer.append( card )
+            //This is outputting name, email, and card(?) info to my initialized users list
+            return { name: user.name, email: user.email, element: card }
     });
+})
+
+
+// Add an event lister to the search bar
+searchInput.addEventListener("input", (e) => {
+    
+    // Extract the values typed into the search bar
+    const value = e.target.value
+
+    //console.log(users)
+
+    //Loop through each user in users array - I HAVE TO LOWERCASE EVERYTHING STILL..
+    users.forEach(user => {
+        //Variable (bool) if value is in name or email of each user
+        const isVisible = user.name.includes(value) || user.email.includes(value) 
+        //console.log(user.element.classlist)
+        //Change the class to hide by accessing the classlist if the typed value is not in the user info.
+        user.element.classList.toggle("hide", !isVisible) // I HAD LOWERCASE l FOR 4 DAYS :(
+    })
 })
