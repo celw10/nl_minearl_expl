@@ -1,3 +1,8 @@
+
+// DELETE
+
+
+
 // Export defined functions
 //export {resetmap, currentclaims, historicclaims, drillcollars, mineralshowings}
 

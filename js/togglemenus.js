@@ -1,3 +1,7 @@
+
+// DELETE
+
+
 // Define local variables //
 const toggleaside = document.getElementById("asidemenu")
 const togglefooter = document.getElementById("footerserach")

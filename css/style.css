@@ -91,6 +91,25 @@ main {
   overflow: hidden;
 }
 
+
+/* Clark's Button Styling */
+.clark_button{
+  padding: 10px 20px;
+  margin-left: 40px;
+  background-color: purple;
+  color: white;
+  border-radius: 25px;
+  transition: transform 1s;
+}
+
+.clark_button:hover{
+  transform: scale(1.15);
+  background-color: darkmagenta;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+
 /* ASIDE STYLINE */
 
 /* Styling for aside child */

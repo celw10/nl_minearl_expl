@@ -12,14 +12,10 @@
     <title> GetCodingProjectProposal </title>
 
     <!-- Link javascript: defer tag means javascript is executed after HTML parser is complete (i.e. HTML is read top to bottom)-->
-    <!-- 
-        THIS DOESN'T WORK! Gives me CORS request block if I only try to bring in one file containing functinos defined elsewhere. 
-    <script src="js/app.js" type="module"> </script>
-    Haven't figured out hot to compress this import.
-    -->
-    <script type="text/javascript" src="js/displaydata.js" defer> </script>  
-    <script type="text/javascript" src="js/searchdata.js" defer> </script>
-    <script type="text/javascript" src="js/togglemenus.js" defer> </script>
+    <script src="js/app.js" type="text/javascript" defer> </script>
+    <!-- <script type="text/javascript" src="js/displaydata.js" defer> </script>   -->
+    <!-- <script type="text/javascript" src="js/searchdata.js" defer> </script> -->
+    <!-- <script type="text/javascript" src="js/togglemenus.js" defer> </script> -->
 
     <!-- Link css -->
     <link rel="stylesheet" href="css/style.css">
@@ -50,6 +46,13 @@
             </nav>
             
             <main>
+
+                <button
+                    class="clark_button"
+                    id="super_cool_button"
+                    >
+                    Clark's Sample Button 
+                </button>
 
                 <!-- Aside tag used as a menu -->
                 <aside class="menu" id="asidemenu">
