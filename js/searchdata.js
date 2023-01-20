@@ -11,8 +11,8 @@ let users = [];
 
 // Fetch some dummy data to populate table
 fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then(data => {
+      .then(res => res.json())
+      .then(data => {
         //Fill users array
         users = data.map(user => {
             //What does this one do again? Re-watch section of video...
@@ -31,7 +31,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
             return { name: user.name, email: user.email, element: card }
     });
 })
-
 
 // Add an event lister to the search bar
 searchInput.addEventListener("input", (e) => {
