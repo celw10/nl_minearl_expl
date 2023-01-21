@@ -3,7 +3,9 @@
   font-family: sans-serif;
 }
 
-/* CONTAINER STYLING */
+/* ============================================================================
+/* Container Styling
+/* ============================================================================
 
 /* Ensuring overlying divs are pushed to the page extents*/
 html, body{
@@ -32,7 +34,9 @@ html, body{
   width: 100%;
 }
 
-/* NAV STYLING */
+/* ============================================================================
+/* Nav Styling
+/* ============================================================================
 
 /* Navigation Parent */
 nav {
@@ -40,49 +44,88 @@ nav {
   height: 32px;
   width: 50%;
   float: right;
-  background-color: rgba(245, 245, 245, 0.30);
+  background-color: #4b609a90; /*THEMING*/
   align-items: center;
   margin: 5px;
   border-radius: 5px;
   font-size: 1.1vw;
 }
 
-/* Input search child - styling both the button and search bar */
-nav input {
-  font-size: 100%;
+/* Search bar */
+nav input[type="search"] {
   height: 24px;
+  flex: 4;
+  margin-left: 2%;
+  margin-right: 1%;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #16272B; /*THEMING*/
+  color: white;
+  cursor: text;
+}
+.searchbar:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.searchbar::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-/* DImage controling dropdown aside */
-nav img {
-  width: 24px;
+/* Search query toggle */
+nav select {
+  height: 24px;
+  flex: 2;
+  margin-left: 1%;
+  margin-right: 1%;
   border: 0;
-  margin-left: 5%;
-  margin-right: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #16272B; /*THEMING*/
+  color:  white;
+  cursor: pointer;
+}
+.query:hover {
+  transform: scale(1.05);
   cursor: pointer;
 }
 
-/* Search bar child */
-nav input[type="search"] {
-  flex: 5;
-  border: 1;
+
+/* Search button */
+nav button {
+  height: 24px;
+  flex: 1;
   margin-left: 1%;
   margin-right: 1%;
-  cursor: text;
-}
-
-/* Search button child */
-nav input[type="submit"] {
-  flex: 1;
-  margin-left: 5px;
-  margin-right: 5px;
-  background: blue;
   border-radius: 5px;
+  border: 0;
+  text-align: center;
+  background-color: #16272B; /*THEMING*/
   color: white;
   cursor: pointer;
 }
+.searchbutton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
-/* MAIN STYLING */
+/* Drop down menu button */
+nav img {
+  height: 24px;
+  flex: 0.5;
+  border: 0;
+  margin-left: 1%;
+  margin-right: 2%;
+  cursor: pointer;
+}
+.dropaside:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* ============================================================================
+/* Main Styling
+/* ============================================================================
 
 /* Styling for main parent */
 main {
@@ -91,26 +134,9 @@ main {
   overflow: hidden;
 }
 
-
-/* Clark's Button Styling */
-.clark_button{
-  padding: 10px 20px;
-  margin-left: 40px;
-  background-color: purple;
-  color: white;
-  border-radius: 25px;
-  transition: transform 1s;
-}
-
-.clark_button:hover{
-  transform: scale(1.15);
-  background-color: darkmagenta;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-
-/* ASIDE STYLINE */
+/* ============================================================================
+/* Aside Styling
+/* ============================================================================
 
 /* Styling for aside child */
 .menu {
@@ -122,9 +148,7 @@ main {
   background-color: lightgrey;
   width: 30%;
   border-radius: 5px;
-  outline: solid;
-  outline-width: 1px;
-  outline-color: black;
+  outline: black solid 1px;
   transition: right 1s;
 }
 
@@ -175,6 +199,10 @@ ul li {
   padding: 0px;
 }
 
+/*============================================================================
+/* Footer search results
+/*============================================================================
+
 /* FOOTER */
 .search-results{
   font-size: 1.2vw;
@@ -183,11 +211,9 @@ ul li {
   background-color: lightgrey;
   width: 98%;
   margin: 1%;
-  max-height: 80%;
+  max-height: 80%; 
   border-radius: 5px;
-  outline: solid;
-  outline-width: 1px;
-  outline-color: black;
+  outline: black solid 1px;
   transition: bottom 1s;
   overflow: auto;
 }
@@ -214,6 +240,10 @@ ul li {
   margin: 1%;
 }
 
+/*============================================================================
+/* Search Results Table 
+/*============================================================================
+
 /* Styling for search results table */
 .tabular-results{
   width: 98%;
@@ -222,10 +252,10 @@ ul li {
 }
 
 /* Styling for rows and columns of results table */
-.tabular-results td, th{
-  border: 1px solid black;
+.tabular-results, thead, tbody{
+  border: black solid 1px;
   text-align: left;
-  padding: 1%;
+  padding: 0.5%
 }
 
 /* Shading for every odd row */ 
@@ -233,30 +263,7 @@ ul li {
   background-color: grey;
 }
 
-/* YOUTUBE VIDEO STYLING */
-.user-cards{
-  display: gird;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.25rem;
-  margin-top: 1rem;
-}
-
-.card{
-  border: 1px solid black;
-  background-color: white;
-  padding: 0.5rem;
-  border-radius: 5px;
-}
-
-.card > .header {
-  margin-bottom: 0.25rem;
-}
-
-.card > .body{
-  font-size: 0.8rem;
-  color: #777;
-}
-
+/* Hide for displaying search results */
 .hide{
   display: none;
 }

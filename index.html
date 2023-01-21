@@ -2,6 +2,12 @@
 
 <html lang="en"> 
 
+<!-- 
+============================================================================
+HEAD
+============================================================================
+-->
+
 <head>
 
     <!-- Include metadata about HTML document -->
@@ -19,9 +25,20 @@
 
 </head>
 
+<!-- 
+============================================================================
+BODY
+============================================================================
+-->
+
 <body> 
 
-    <!-- Container div for entire page and GIS background application -->
+    <!-- 
+    ============================================================================
+    CONTAINER: Background image/GIS API goes here
+    ============================================================================
+    -->
+
     <div class="container">
 
         <!-- Showing a background image temporarly as a placeholder -->
@@ -30,28 +47,55 @@
         <!-- Overlay div for content on top of GIS application -->
         <div class="overlay"> 
 
-            <!-- Top level page navigation  -->
+            <!-- 
+            ============================================================================
+            NAV: Search functionality & aside menu toggle
+            ============================================================================
+            -->
+
             <nav> 
 
-                <!-- Search and submit query funcitonality -->
-                <input type="search" id='search' data-search/>
-                <input type="submit" value="search" onclick="opensearch()"/>
+                <!-- Database search, linked with JS listner -->
+                <input type="search" class="searchbar" id='data-search' placeholder="search database"/>
 
-                <!-- Drop down menu -->
-                <img src="images/misc/menu.png" onclick="openmenu()" alt="drop down menu button">
+                <!-- Dropdown menu that governs query through database header -->
+                <select class="query" id="data-headers">
+                    <option value=""> select search query </option>
+                    <option value="company"> Companies </option>
+                    <option value="license"> Licenses </option>
+                    <option value="locaiton"> Locations </option>
+                    <option value="status"> Claim Status </option>
+                    <option value="active"> Claims Active From </option>
+                    <option value="unactive"> Claims Active To </option>
+                    <option value="expenditures"> Minimum Expenditures </option>
+                </select>
 
-            </nav>
-            
-            <main>
+                <!-- Submit button, linked with JS to show footer search results 
+                <input type="submit" value="search" onclick="opensearch()"/>-->
 
-                <button
-                    class="clark_button"
-                    id="super_cool_button"
-                    >
-                    Clark's Sample Button 
+                <!-- Image/data toggle menu, linke with JS to dropdown -->
+                <button class="searchbutton" id="search-button" onclick="opensearch()">
+                    search
                 </button>
 
-                <!-- Aside tag used as a menu -->
+                <img class="dropaside" src="images/misc/menu.png" onclick="openmenu()">
+
+            </nav>
+
+            <!-- 
+            ============================================================================
+            MAIN
+            ============================================================================
+            -->
+
+            <main>
+                
+                <!-- 
+                ============================================================================
+                ASIDE: Image/field toggle menu
+                ============================================================================
+                -->
+
                 <aside class="menu" id="asidemenu">
 
                     <!-- Close aside menu -->
@@ -100,7 +144,12 @@
             
                 </aside>
 
-                <!-- Footer tag used as search results -->
+                <!-- 
+                ============================================================================
+                FOOTER: Search/query results
+                ============================================================================
+                -->
+
                 <footer class="search-results" id="footerserach">
 
                     <!-- Close search results -->
@@ -111,63 +160,45 @@
                         Search Results: <p id="search-output"> </p>
                     </h2>
 
-                    <!-- Implementation of a youtube dynamic search function -->
-                    <div class="user-cards" data-user-cards-container></div>
-                    <!-- Template allows later rendering of styling with javascript -->
-                    <template data-user-template>
-                        <div class="card">
-                            <div class="header" data-header></div>
-                            <div class="body" data-body></div>
-                        </div>
-                    </template>
-                    
-                    <!-- 
-                        Search output in tabular format 
-                        CAN I POPULATE A TABLE LIKE I DID IN THE ABOVE YOUTUBE EXAMPLE
+                    <!--
+                    ============================================================================
+                    TABLE: Tabular formation for search/query results
+                    ============================================================================
                     -->
-                    <table class="tabular-results">
-                        <!-- Table row -->
-                        <tr>
-                            <!-- Unique table headers, governs column sizes -->
-                            <th width="26%"> Company </th>
-                            <th width="14%"> License Number </th>
-                            <th width="11%"> Location </th>
-                            <th width="11%"> Status </th>
-                            <th width="11%"> Active From </th>
-                            <th width="11%"> Active To </th>
-                            <th width="16%"> Total Expenditures </th>
-                        </tr>
-                        <tr >
-                            <!-- Subsequent table rows -->
-                            <td> Gold Company </td>
-                            <td> 99999 </td>
-                            <td> Central NL </td>
-                            <td> Active </td>
-                            <td> 2018-09-12 </td>
-                            <td> - </td>
-                            <td> 1,287,190 </td>                        
-                        </tr>
-                        <tr >
-                            <td> Take The Card </td>
-                            <td> Example and Populate </td>
-                            <td> A </td>
-                            <td> Table </td>
-                            <td> Like </td>
-                            <td> This </td>
-                            <td> One </td>                        
-                        </tr>
 
+                    <table class="tabular-results" id="table">
+
+                        <!-- Table headers -->
+                        <thead>
+                            <tr>
+                                <th width="26%"> Company </th>
+                                <th width="14%"> License Number </th>
+                                <th width="11%"> Location </th>
+                                <th width="11%"> Status </th>
+                                <th width="11%"> Active From </th>
+                                <th width="11%"> Active To </th>
+                                <th width="16%"> Total Expenditures </th>
+                            </tr>
+                        </thead>
+                        <!-- Table rows filled by Javascript activated template -->
                     </table>
 
+                    <!-- Template to autopopulate table rows -->
+                    <template id="search-row">
+                        <tr>
+                            <td class="company" id="data-company"></td>
+                            <td class="license" id="data-license"></td>
+                            <td class="location" id="data-location"></td>
+                            <td class="status" id="data-status"></td>
+                            <td class="active" id="data-active"></td>
+                            <td class="unactive" id="data-unactive"></td>
+                            <td class="expenditures" id="data-expenditures"></td>
+                        </tr>
+                    </template>
+
                 </footer>
-
             </main>
-
         </div>
-
     </div>
-
 </body>
-
-
 </html>

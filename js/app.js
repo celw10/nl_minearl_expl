@@ -47,7 +47,7 @@ function opensearch(){
 // ============================================================================
 
 // Fetch historic claims data
-let geo_data = {}
+/*let geo_data = {}
 
 fetch("../data/HistoricClaims_Test.geojson").then(res => res.json()).then(data => geo_data = data)
 
@@ -67,13 +67,73 @@ searchInput.addEventListener("input", (e) => {
     document.getElementById('search-output').innerHTML = value;
 })
 
+*/
+
+//Access elements from DOM
+const searchRow = document.querySelector("#search-row")
+const searchTable = document.querySelector("#table")
+const searchInput = document.querySelector("#data-search")
+
+//Initalize data array for search
+let list = []; 
+
+//Fetch API to get json data - using dummy data to work in fuctionality
+fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => {
+        //Fill users array
+        list = data.map(item => {
+            const row = searchRow.content.cloneNode(true).children[0]
+
+            //Assing variables to each tabular element
+            const company = row.querySelector("#data-company")
+            const license = row.querySelector("#data-license")
+            const location = row.querySelector("#data-location")
+            const status = row.querySelector("#data-status")
+            const active = row.querySelector("#data-active")
+            const unactive = row.querySelector("#data-unactive")
+            const expenditures = row.querySelector("#data-expenditures")
+
+            //Poupulate the table
+            company.textContent = item.company.name
+            license.textContent = item.username
+            location.textContent = item.address.city
+            status.textContent = item.website
+            active.textContent = item.address.geo.lat
+            unactive.textContent = item.address.geo.lng
+            expenditures.textContent = item.address.zipcode
+
+            //Append content from file to table
+            searchTable.append( row )
+
+            //Return searchable data to list
+            return { company: item.company.name, element: row }
+    });
+})
+
+// Add an event lister to the search bar
+searchInput.addEventListener("input", (e) => {
+    
+    // Extract the values typed into the search bar
+    const value = e.target.value.toLowerCase()
+
+    console.log(list)
+
+    //Loop through each user in users array - I HAVE TO LOWERCASE EVERYTHING STILL..
+    list.forEach(result => {
+        //Variable (bool) if value is in name or email of each user
+        const isVisible = result.company.toLowerCase().includes(value)
+        //console.log(user.element.classlist)
+        //Change the class to hide by accessing the classlist if the typed value is not in the user info.
+        result.element.classList.toggle("hide", !isVisible) // I HAD LOWERCASE l FOR 4 DAYS :(
+    })
+})
 
 
 
 // ============================================================================
 // JS for handling search bar
 // ============================================================================
-// Export defined functions
 
 // Reset map to basemap
 function resetmap(){
@@ -99,19 +159,3 @@ function drillcollars(){
 function mineralshowings(){
     document.getElementById('gis').src = "images/gis/MODSExample.jpg"
 }
-
-
-
-// ============================================================================
-// Clark's Sample Code
-// ============================================================================
-
-const clark_button = document.getElementById('super_cool_button');
-
-// using the unique id property I assign to the button allows me to attach complex logic easily
-// in a callback function. There are a ton of other event triggers as well!
-clark_button.addEventListener('click', (event) => {
-    // Logging things to the console is a great way to test your code!
-    console.table({geo_data})
-    console.log({event})
-})
