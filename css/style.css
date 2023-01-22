@@ -138,65 +138,64 @@ main {
 /* Aside Styling
 /* ============================================================================
 
-/* Styling for aside child */
+/* Styling for aside */
 .menu {
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   position: absolute;
   float: right;
   right: -1000px;
   margin: 5px;
-  background-color: lightgrey;
+  background-color: #283B51; /*THEMING*/
   width: 30%;
   border-radius: 5px;
-  outline: black solid 1px;
+  outline: black solid 2px;
   transition: right 1s;
 }
 
-/* Styling for close menu icon in aside tab */
+/* Close menu button */
 .menu img{
   width: 24px;
   float: right;
   margin: 5px;
   cursor: pointer;
 }
+.closeaside:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
-/* Styling for h2 child */
+/* Styling for h2 */
 .menu h2 {
   align-items: center;
   font-size: 125%;
-  margin-left: 5px;
+  margin-left: 2%;
+  color: white;
 }
 
 /* Styling for h3 children */
 .menu h3 {
   align-items: center;
-  font-size: 100%;
-  margin-left: 5px;
-}
-
-/* Class applied to lists in aside-menu */
-.no-bullets-list{
-  list-style-type: none;
-  padding: 0;
-  padding-right: 10px;
-}
-
-/* Add styling to menu options */
-.no-bullets-list li a{
-  text-decoration: none;
-  color: black;
-  font-size: 100%;
-}
-
-/* Add hover styling effect */
-.no-bullets-list li a:hover{
-  font-weight: 700;
+  margin-left: 3%;
+  color: white;
 }
 
 /* Styling for lists */
 ul li {
-  margin: 5px;
-  padding: 0px;
+  margin-left: 4%;
+  padding: 2px;
+}
+
+/* no-bullets-list class applied to menu items */
+.no-bullets-list{
+  list-style-type: none;
+  padding: 0;
+}
+.no-bullets-list li a{
+  text-decoration: none;
+  color: white;
+}
+.no-bullets-list li a:hover{
+  font-weight: 500;
 }
 
 /*============================================================================
@@ -205,15 +204,15 @@ ul li {
 
 /* FOOTER */
 .search-results{
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   position: absolute;
   bottom: -1000px;
-  background-color: lightgrey;
+  background-color: #283B51; /*THEMING*/
   width: 98%;
   margin: 1%;
   max-height: 80%; 
   border-radius: 5px;
-  outline: black solid 1px;
+  outline: black solid 2px;
   transition: bottom 1s;
   overflow: auto;
 }
@@ -225,19 +224,16 @@ ul li {
   margin: 5px;
   cursor: pointer;
 }
-
-/* Styling for search results heading */
-.search-results h2{
-  align-items: center;
-  font-size: 125%;
-  margin-left: 1%;
+.closefooter:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-/* Styling for temp search output text, large font to exhibit scroll bar once search output reaches maximum */
-.search-results p{
-  display: flex;
-  flex: auto;
-  margin: 1%;
+/* Styling for search results heading */
+.search-results h3{
+  align-items: center;
+  margin-left: 1%;
+  color: white
 }
 
 /*============================================================================
@@ -252,15 +248,23 @@ ul li {
 }
 
 /* Styling for rows and columns of results table */
-.tabular-results, thead, tbody{
-  border: black solid 1px;
+.tabular-results {
   text-align: left;
-  padding: 0.5%
+  color: white;
 }
 
-/* Shading for every odd row */ 
-.tabular-results tr:nth-child(even){
-  background-color: grey;
+/* Cell styling */
+.tabular-results td, th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/* Row shading */ 
+.tabular-results tr:nth-child(odd){
+  background-color: #1B2D32; /*THEMING*/
+}
+.tabular-results tr:first-child {
+  background-color: #16272B; /*THEMING*/
 }
 
 /* Hide for displaying search results */

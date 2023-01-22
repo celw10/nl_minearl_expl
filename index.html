@@ -99,7 +99,7 @@ BODY
                 <aside class="menu" id="asidemenu">
 
                     <!-- Close aside menu -->
-                    <img src="images/misc/close.png" onclick="closemenu()" alt="close button">
+                    <img class="closeaside" src="images/misc/close.png" onclick="closemenu()">
 
                     <!-- Headers and list of (hopeful) future applicaiton functionalities -->
                     <h2>
@@ -116,12 +116,11 @@ BODY
             
                     <ul class="no-bullets-list">
                         <li> <a href="#" onclick="currentclaims()"> Current Mineral Exploration Licenses </a> </li>
-                        <li> <a href="#"> Cancelled Mineral Exploraiton Licenses </a> </li>
                         <li> <a href="#" onclick="historicclaims()"> Historic Mineral Exploration Licenses </a> </li>
                     </ul>
                     
                     <h3>
-                        Historic Data
+                        Data
                     </h3>
             
                     <ul class="no-bullets-list">
@@ -139,7 +138,6 @@ BODY
                     <ul class="no-bullets-list">
                         <li> <a href="#">Share Price</a></li>
                         <li> <a href="#">Market Capital</a></li>
-                        <li> <a href="#">Share Price Change</a></li>
                     </ul>
             
                 </aside>
@@ -153,12 +151,10 @@ BODY
                 <footer class="search-results" id="footerserach">
 
                     <!-- Close search results -->
-                    <img src="images/misc/close.png" onclick="closesearch()" alt="close button">
+                    <img class="closefooter" src="images/misc/close.png" onclick="closesearch()" alt="close button">
                     
                     <!-- Linked to search bar to display what is typed in Display in the same line?-->
-                    <h2>
-                        Search Results: <p id="search-output"> </p>
-                    </h2>
+                    <h3 id="search-output"> Search Results: </h3>
 
                     <!--
                     ============================================================================
@@ -167,16 +163,15 @@ BODY
                     -->
 
                     <table class="tabular-results" id="table">
-
                         <!-- Table headers -->
                         <thead>
                             <tr>
-                                <th width="26%"> Company </th>
+                                <th width="22%"> Company </th>
                                 <th width="14%"> License Number </th>
-                                <th width="11%"> Location </th>
-                                <th width="11%"> Status </th>
-                                <th width="11%"> Active From </th>
-                                <th width="11%"> Active To </th>
+                                <th width="12%"> Location </th>
+                                <th width="12%"> Status </th>
+                                <th width="12%"> Active From </th>
+                                <th width="12%"> Active To </th>
                                 <th width="16%"> Total Expenditures </th>
                             </tr>
                         </thead>

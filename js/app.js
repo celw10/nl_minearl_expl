@@ -77,6 +77,13 @@ const searchInput = document.querySelector("#data-search")
 //Initalize data array for search
 let list = []; 
 
+//Initialize variable to store search result
+let searchResultsText = "Search Results: "
+let searchResults = ""
+
+//Value for search
+const searchQuery = document.querySelector('#data-headers')
+
 //Fetch API to get json data - using dummy data to work in fuctionality
 fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
@@ -117,19 +124,20 @@ searchInput.addEventListener("input", (e) => {
     // Extract the values typed into the search bar
     const value = e.target.value.toLowerCase()
 
-    console.log(list)
+    //Write the search result to search results header
+    searchResults = searchResultsText + value
+    document.getElementById('search-output').innerHTML = searchResults
 
-    //Loop through each user in users array - I HAVE TO LOWERCASE EVERYTHING STILL..
+    //Loop through each user in users array
     list.forEach(result => {
         //Variable (bool) if value is in name or email of each user
         const isVisible = result.company.toLowerCase().includes(value)
-        //console.log(user.element.classlist)
+
         //Change the class to hide by accessing the classlist if the typed value is not in the user info.
-        result.element.classList.toggle("hide", !isVisible) // I HAD LOWERCASE l FOR 4 DAYS :(
+        result.element.classList.toggle("hide", !isVisible) 
     })
+
 })
-
-
 
 // ============================================================================
 // JS for handling search bar
