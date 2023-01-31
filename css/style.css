@@ -72,7 +72,7 @@ nav input[type="search"] {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Search query toggle */
+/* Search query toggle ODD STYLING IN SAFARI!*/
 nav select {
   height: 24px;
   flex: 2;

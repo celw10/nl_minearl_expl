@@ -46,10 +46,14 @@ function opensearch(){
 // JS for handling search bar
 // ============================================================================
 
+/*
+
 // Fetch historic claims data
-/*let geo_data = {}
+let geo_data = {}
 
 fetch("../data/HistoricClaims_Test.geojson").then(res => res.json()).then(data => geo_data = data)
+
+console.log(geo_data)
 
 // Select the search bar //
 const searchInput = document.querySelector("[data-search]")
@@ -84,6 +88,15 @@ let searchResults = ""
 //Value for search
 const searchQuery = document.querySelector('#data-headers')
 
+//Add listner to query bar
+/*searchQuery.addEventListener("input", (e) =>  {
+
+    //Set global variable - use this within event listner for search bar
+    var queryval = e.target.value
+    console.log(queryval)
+    return queryval
+})*/
+
 //Fetch API to get json data - using dummy data to work in fuctionality
 fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
@@ -114,7 +127,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
             searchTable.append( row )
 
             //Return searchable data to list
-            return { company: item.company.name, element: row }
+            return { company: item.company.name, license: item.username, location: item.address.city,
+                    status: item.website, active: item.address.geo.lat, unactive: item.address.geo.lng, 
+                    expenditures: item.address.zipcode, element: row }
     });
 })
 
@@ -128,13 +143,46 @@ searchInput.addEventListener("input", (e) => {
     searchResults = searchResultsText + value
     document.getElementById('search-output').innerHTML = searchResults
 
+    const query = document.getElementById("data-headers").value
+
+    console.log(query)
+    console.log(query == "Total Expenditues")
+
     //Loop through each user in users array
     list.forEach(result => {
-        //Variable (bool) if value is in name or email of each user
-        const isVisible = result.company.toLowerCase().includes(value)
 
-        //Change the class to hide by accessing the classlist if the typed value is not in the user info.
-        result.element.classList.toggle("hide", !isVisible) 
+        //Incorporate search query to search through different data headers
+        if ( query == "License Number" ){
+            let isVisible = result.license.toLowerCase().includes(value)
+            result.element.classList.toggle("hide", !isVisible) 
+        }
+        else if ( query == "Location" ){
+            console.log("HERE")
+            let isVisible = result.location.toLowerCase().includes(value)
+            result.element.classList.toggle("hide", !isVisible) 
+        }
+        else if ( query == "Status" ){
+            let isVisible = result.status.toLowerCase().includes(value)
+            result.element.classList.toggle("hide", !isVisible) 
+        }
+        else if ( query == "Active From" ){
+            let isVisible = result.active.toLowerCase().includes(value)
+            result.element.classList.toggle("hide", !isVisible) 
+        }
+        else if ( query == "Active To" ){
+            let isVisible = result.unactive.toLowerCase().includes(value)
+            result.element.classList.toggle("hide", !isVisible) 
+        }
+        else if ( query == "Total Expenditues" ){
+            let isVisible = result.expenditures.toLowerCase().includes(value)
+            result.element.classList.toggle("hide", !isVisible) 
+        }
+        else{
+            //Set default search to company
+            let isVisible = result.company.toLowerCase().includes(value)
+            result.element.classList.toggle("hide", !isVisible) 
+        }
+
     })
 
 })
