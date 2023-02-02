@@ -46,40 +46,13 @@ function opensearch(){
 // JS for handling search bar
 // ============================================================================
 
-/*
-
-// Fetch historic claims data
-let geo_data = {}
-
-fetch("../data/HistoricClaims_Test.geojson").then(res => res.json()).then(data => geo_data = data)
-
-console.log(geo_data)
-
-// Select the search bar //
-const searchInput = document.querySelector("[data-search]")
-
-// Add an event lister to the search bar //
-searchInput.addEventListener("input", (e) => {
-
-    // Extract the values typed into the search bar //
-    const value = e.target.value
-
-    // Output what is typed into seach bar on the console log //
-    console.log(value)
-
-    //Print the input value const to an arbitrary (and temporary) locaiton on main //
-    document.getElementById('search-output').innerHTML = value;
-})
-
-*/
-
 //Access elements from DOM
 const searchRow = document.querySelector("#search-row")
 const searchTable = document.querySelector("#table")
 const searchInput = document.querySelector("#data-search")
 
-//Initalize data array for search
-let list = []; 
+//Initalize data array inported from JSON
+let geo_data = [];
 
 //Initialize variable to store search result
 let searchResultsText = "Search Results: "
@@ -88,25 +61,17 @@ let searchResults = ""
 //Value for search
 const searchQuery = document.querySelector('#data-headers')
 
-//Add listner to query bar
-/*searchQuery.addEventListener("input", (e) =>  {
-
-    //Set global variable - use this within event listner for search bar
-    var queryval = e.target.value
-    console.log(queryval)
-    return queryval
-})*/
-
-//Fetch API to get json data - using dummy data to work in fuctionality
-fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => res.json())
-      .then(data => {
+//Use npoint.io hosted historic claims data
+fetch('https://api.npoint.io/616f555ba4fb21255e8a')
+        .then(res => res.json())
+        .then(data => {
         //Fill users array
-        list = data.map(item => {
+        geo_data = data.map( item => {
+            //Define JSON data row
             const row = searchRow.content.cloneNode(true).children[0]
 
-            //Assing variables to each tabular element
-            const company = row.querySelector("#data-company")
+            //Access portions of each tabular row in referenced table
+            const company = row.querySelector("#data-company") //Get element by ID does not work with row
             const license = row.querySelector("#data-license")
             const location = row.querySelector("#data-location")
             const status = row.querySelector("#data-status")
@@ -115,22 +80,23 @@ fetch('https://jsonplaceholder.typicode.com/users')
             const expenditures = row.querySelector("#data-expenditures")
 
             //Poupulate the table
-            company.textContent = item.company.name
-            license.textContent = item.username
-            location.textContent = item.address.city
-            status.textContent = item.website
-            active.textContent = item.address.geo.lat
-            unactive.textContent = item.address.geo.lng
-            expenditures.textContent = item.address.zipcode
+            company.textContent = item.properties.CLIENT_NAM
+            license.textContent = item.properties.LICENSE_NB
+            location.textContent = item.properties.LOCATION
+            status.textContent = item.properties.STATUS
+            active.textContent = item.properties.STAKEDATE
+            unactive.textContent = item.properties.RPTDUE
+            expenditures.textContent = item.properties.TOTAL_EXP
 
             //Append content from file to table
             searchTable.append( row )
 
-            //Return searchable data to list
-            return { company: item.company.name, license: item.username, location: item.address.city,
-                    status: item.website, active: item.address.geo.lat, unactive: item.address.geo.lng, 
-                    expenditures: item.address.zipcode, element: row }
-    });
+            //Return searchable data to geo_data
+            return { company: item.properties.CLIENT_NAM, license: item.properties.LICENSE_NB, location: item.properties.LOCATION,
+                status: item.properties.STATUS, active: item.properties.STAKEDATE, unactive: item.properties.RPTDUE, 
+                expenditures: item.properties.TOTAL_EXP, element: row }
+
+    })
 })
 
 // Add an event lister to the search bar
@@ -149,7 +115,7 @@ searchInput.addEventListener("input", (e) => {
     console.log(query == "Total Expenditues")
 
     //Loop through each user in users array
-    list.forEach(result => {
+    geo_data.forEach(result => {
 
         //Incorporate search query to search through different data headers
         if ( query == "License Number" ){
@@ -184,7 +150,6 @@ searchInput.addEventListener("input", (e) => {
         }
 
     })
-
 })
 
 // ============================================================================
