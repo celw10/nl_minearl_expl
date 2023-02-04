@@ -90,7 +90,6 @@ nav select {
   cursor: pointer;
 }
 
-
 /* Search button */
 nav button {
   height: 24px;
@@ -146,7 +145,7 @@ main {
   right: -1000px;
   margin: 5px;
   background-color: #283B51; /*THEMING*/
-  width: 30%;
+  width: 20%;
   border-radius: 5px;
   outline: black solid 2px;
   transition: right 1s;
@@ -167,7 +166,7 @@ main {
 /* Styling for h2 */
 .menu h2 {
   align-items: center;
-  font-size: 125%;
+  font-size: 110%;
   margin-left: 2%;
   color: white;
 }
@@ -175,6 +174,7 @@ main {
 /* Styling for h3 children */
 .menu h3 {
   align-items: center;
+  font-size: 95%;
   margin-left: 3%;
   color: white;
 }
@@ -188,14 +188,11 @@ ul li {
 /* no-bullets-list class applied to menu items */
 .no-bullets-list{
   list-style-type: none;
-  padding: 0;
+  padding: 2px;
 }
 .no-bullets-list li a{
   text-decoration: none;
   color: white;
-}
-.no-bullets-list li a:hover{
-  font-weight: 500;
 }
 
 /*============================================================================

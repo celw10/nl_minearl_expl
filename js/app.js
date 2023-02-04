@@ -1,6 +1,6 @@
 
 // ============================================================================
-// JS for Aside menu and related handlers
+// Hide/Display Menu and Search Results 
 // ============================================================================
 
 // Define local variables //
@@ -43,7 +43,7 @@ function opensearch(){
 
 
 // ============================================================================
-// JS for handling search bar
+// Search Funcitons (NAV & FOOTER Tabs)
 // ============================================================================
 
 //Access elements from DOM
@@ -109,10 +109,8 @@ searchInput.addEventListener("input", (e) => {
     searchResults = searchResultsText + value
     document.getElementById('search-output').innerHTML = searchResults
 
+    // Define search query based on select option 
     const query = document.getElementById("data-headers").value
-
-    console.log(query)
-    console.log(query == "Total Expenditues")
 
     //Loop through each user in users array
     geo_data.forEach(result => {
@@ -153,12 +151,33 @@ searchInput.addEventListener("input", (e) => {
 })
 
 // ============================================================================
-// JS for handling search bar
+// Assessment Report View/Upload
+// ============================================================================
+
+const realFileButton = document.getElementById("selected-file")
+
+// Add an event lister to the search bar
+realFileButton.addEventListener("change", function() {
+    if (realFileButton.value) {
+        console.log("You uploaded the following PDF file: ")
+        console.log(realFileButton.value)
+        console.log("In the future, some cool backend code will look at this PDF and extract tabular data and (possibly) georeference old maps.")
+        console.log("You'll then be able to download the extracted data package for usage.")
+    }
+})
+
+// ============================================================================
+// Menu Funcitons
 // ============================================================================
 
 // Reset map to basemap
 function resetmap(){
     document.getElementById('gis').src = "images/gis/NL_Basemap.jpg"
+}
+
+// Upload document
+function uploadpdf(){
+    document.getElementById('selected-file').click()
 }
 
 // Toggle current claims
