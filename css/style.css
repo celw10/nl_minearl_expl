@@ -20,7 +20,7 @@ html, body{
 }
 
 /* Background image spanning page enxtent, placeholder for GIS API */
-.background-img{
+.backgroundimg{
   height: 100vh;
   width: 100%;
 }
@@ -215,7 +215,7 @@ ul li {
 }
 
 /* Styling for exit button */
-.search-results img{
+.searchresults img{
   width: 24px;
   float: right;
   margin: 5px;
@@ -227,7 +227,7 @@ ul li {
 }
 
 /* Styling for search results heading */
-.search-results h3{
+.searchresults h3{
   align-items: center;
   margin-left: 1%;
   color: white
@@ -238,33 +238,43 @@ ul li {
 /*============================================================================
 
 /* Styling for search results table */
-.tabular-results{
+.tabularresults{
   width: 98%;
   margin: 1%;
   border-collapse: collapse;
 }
 
 /* Styling for rows and columns of results table */
-.tabular-results {
+.tabularresults {
   text-align: left;
   color: white;
 }
 
 /* Cell styling */
-.tabular-results td, th {
+.tabularresults td, th {
   border: 1px solid black;
   padding: 5px;
 }
 
 /* Row shading */ 
-.tabular-results tr:nth-child(odd){
+.tabularresults tr:nth-child(odd){
   background-color: #1B2D32; /*THEMING*/
 }
-.tabular-results tr:first-child {
+.tabularresults tr:first-child {
   background-color: #16272B; /*THEMING*/
 }
 
 /* Hide for displaying search results */
 .hide{
   display: none;
+}
+
+/*============================================================================
+/* Styling for Chris' Rocks
+/*============================================================================
+
+/* Background Image */
+
+.rocktypes{
+  width: 100%;
 }
