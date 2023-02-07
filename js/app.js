@@ -5,7 +5,7 @@
 
 // Define local variables //
 const toggleaside = document.getElementById("asidemenu")
-const togglefooter = document.getElementById("footer-serach")
+const togglefooter = document.getElementById("footer-search")
 
 // Move the aside/footer tab off screen - BETTER WAY THAN 1000px? //Check out CSS methods (transform: translate(x, y))
 function closemenu(){

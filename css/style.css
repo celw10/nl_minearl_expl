@@ -7,16 +7,23 @@
 /* Container Styling
 /* ============================================================================
 
-/* Ensuring overlying divs are pushed to the page extents*/
-html, body{
+/* HTML Style */
+html {
+  width: 100vw;
+}
+
+/* Main body container */
+.main{
   height: 100vh;
   margin: 0;
   overflow: hidden;
 }
 
-/* Container div spanning entire page extent, GIS API in this DIV */
-.container{
-  height: 100vh;
+/* Sub-page body container */
+.chrisRocks{
+  width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 /* Background image spanning page enxtent, placeholder for GIS API */
@@ -200,7 +207,7 @@ ul li {
 /*============================================================================
 
 /* FOOTER */
-.search-results{
+.searchResults{
   font-size: 1.1vw;
   position: absolute;
   bottom: -1000px;
@@ -215,19 +222,19 @@ ul li {
 }
 
 /* Styling for exit button */
-.searchresults img{
+.searchResults img{
   width: 24px;
   float: right;
   margin: 5px;
   cursor: pointer;
 }
-.closefooter:hover {
+.closeFooter:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 
 /* Styling for search results heading */
-.searchresults h3{
+.searchResults h3{
   align-items: center;
   margin-left: 1%;
   color: white
@@ -238,29 +245,29 @@ ul li {
 /*============================================================================
 
 /* Styling for search results table */
-.tabularresults{
+.tabularResults{
   width: 98%;
   margin: 1%;
   border-collapse: collapse;
 }
 
 /* Styling for rows and columns of results table */
-.tabularresults {
+.tabularResults {
   text-align: left;
   color: white;
 }
 
 /* Cell styling */
-.tabularresults td, th {
+.tabularResults td, th {
   border: 1px solid black;
   padding: 5px;
 }
 
 /* Row shading */ 
-.tabularresults tr:nth-child(odd){
+.tabularResults tr:nth-child(odd){
   background-color: #1B2D32; /*THEMING*/
 }
-.tabularresults tr:first-child {
+.tabularResults tr:first-child {
   background-color: #16272B; /*THEMING*/
 }
 
@@ -273,8 +280,34 @@ ul li {
 /* Styling for Chris' Rocks
 /*============================================================================
 
-/* Background Image */
 
-.rocktypes{
-  width: 100%;
+/* Rock Type Image Containers */
+.rockTypeContainers{
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
+
+/* Rock Type Images */
+.rockTypeImages{
+  object-fit: cover;
+  width: 100vw;
+  height: auto;
+}
+
+/* Header Styling */
+.typeHeader{
+  position: absolute;
+  top: 0;
+  width: 98vw;
+  padding: 1vw;
+  text-align: center;
+}
+.rockTypeHeader{
+  font-style: bold;
+  font-size: 250%;
+}
+.rockTypeExplination{
+  font-style: italic;
+  font-size: 125%;
 }

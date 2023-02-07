@@ -27,11 +27,11 @@ HEAD
 
 <!-- 
 ============================================================================
-BODY
+BODY: Background image/GIS API goes here
 ============================================================================
 -->
 
-<body> 
+<body class="main"> 
 
     <!-- 
     ============================================================================
@@ -39,164 +39,161 @@ BODY
     ============================================================================
     -->
 
-    <div class="container">
+    <!-- Showing a background image temporarly as a placeholder -->
+    <img class="backgroundimg" id="gis" src="images/gis/EastCoastBasemap.jpg">
 
-        <!-- Showing a background image temporarly as a placeholder -->
-        <img class="backgroundimg" id="gis" src="images/gis/EastCoastBasemap.jpg">
+    <!-- Overlay div for content on top of GIS application -->
+    <div class="overlay"> 
 
-        <!-- Overlay div for content on top of GIS application -->
-        <div class="overlay"> 
+        <!-- 
+        ============================================================================
+        NAV: Search functionality & aside menu toggle
+        ============================================================================
+        -->
 
+        <nav> 
+
+            <!-- Database search, linked with JS listner -->
+            <input type="search" class="searchbar" id='data-search' placeholder="search database"/>
+
+            <!-- Dropdown menu that governs query through database header -->
+            <select class="query" id="data-headers">
+                <option value=""> select search query </option>
+                <option value="Company"> Companies </option>
+                <option value="License Number"> Licenses </option>
+                <option value="Location"> Locations </option>
+                <option value="Status"> Claim Status </option>
+                <option value="Active From"> Claims Active From </option>
+                <option value="Active To"> Claims Active To </option>
+                <option value="Total Expenditues"> Total Expenditures </option>
+            </select>
+
+            <!-- Submit button, linked with JS to show footer search results 
+            <input type="submit" value="search" onclick="opensearch()"/>-->
+
+            <!-- Image/data toggle menu, linke with JS to dropdown -->
+            <button class="searchbutton" id="search-button" onclick="opensearch()">
+                search
+            </button>
+
+            <img class="dropaside" src="images/misc/menu.png" onclick="openmenu()">
+
+        </nav>
+
+        <!-- 
+        ============================================================================
+        MAIN
+        ============================================================================
+        -->
+
+        <main>
+            
             <!-- 
             ============================================================================
-            NAV: Search functionality & aside menu toggle
+            ASIDE: Image/field toggle menu
             ============================================================================
             -->
 
-            <nav> 
+            <aside class="menu" id="asidemenu">
 
-                <!-- Database search, linked with JS listner -->
-                <input type="search" class="searchbar" id='data-search' placeholder="search database"/>
+                <!-- Close aside menu -->
+                <img class="closeaside" src="images/misc/close.png" onclick="closemenu()">
 
-                <!-- Dropdown menu that governs query through database header -->
-                <select class="query" id="data-headers">
-                    <option value=""> select search query </option>
-                    <option value="Company"> Companies </option>
-                    <option value="License Number"> Licenses </option>
-                    <option value="Location"> Locations </option>
-                    <option value="Status"> Claim Status </option>
-                    <option value="Active From"> Claims Active From </option>
-                    <option value="Active To"> Claims Active To </option>
-                    <option value="Total Expenditues"> Total Expenditures </option>
-                </select>
+                <!-- Headers and list of (hopeful) future applicaiton functionalities -->
+                <h2>
+                    Menu
+                </h2>
 
-                <!-- Submit button, linked with JS to show footer search results 
-                <input type="submit" value="search" onclick="opensearch()"/>-->
-
-                <!-- Image/data toggle menu, linke with JS to dropdown -->
-                <button class="searchbutton" id="search-button" onclick="opensearch()">
-                    search
-                </button>
-
-                <img class="dropaside" src="images/misc/menu.png" onclick="openmenu()">
-
-            </nav>
-
-            <!-- 
-            ============================================================================
-            MAIN
-            ============================================================================
-            -->
-
-            <main>
+                <ul class="no-bullets-list">
+                    <li> <a href="#" onclick="resetmap()"> Reset Map </a></li>
+                    <li> 
+                        <input type="file" id="selected-file" class="hide" accept=".pdf" />
+                        <a href="#" onclick="uploadpdf()" > Upload Assessment Report </a>
+                    </li>
+                </ul>
+        
+                <h3> 
+                    Exploration Licenses
+                </h3>
+        
+                <ul class="no-bullets-list">
+                    <li> <a href="#" onclick="currentclaims()"> Active </a> </li>
+                    <li> <a href="#" onclick="historicclaims()"> Historic </a> </li>
+                </ul>
                 
-                <!-- 
+                <h3>
+                    Historic Data
+                </h3>
+        
+                <ul class="no-bullets-list">
+                    <li> <a href="#" onclick="mineraltenure()"> Mineral Resources </a> </li>
+                    <li> <a href="#" onclick="drillcollars()"> Drilling </a> </li>
+                    <li> <a href="#" onclick="mineralshowings()"> Mineral Showings </a> </li>
+                    <li> <a href="#" onclick="geophysics()"> Geophysics </a> </li>
+                    <li> <a href="#" onclick="bedrockmaps()"> Maps </a> </li>
+                </ul>
+        
+                <h3>
+                    Bonus Content!
+                </h3>
+        
+                <ul class="no-bullets-list">
+                    <li> <a href="html/chrisrocks.html" > Chris' Rock Collection </a></li>
+                </ul>
+        
+            </aside>
+
+            <!-- 
+            ============================================================================
+            FOOTER: Search/query results
+            ============================================================================
+            -->
+
+            <footer class="searchResults" id="footer-search">
+
+                <!-- Close search results -->
+                <img class="closeFooter" src="images/misc/close.png" onclick="closesearch()" alt="close button">
+                
+                <!-- Linked to search bar to display what is typed in Display in the same line?-->
+                <h3 id="search-output"> Search Results: </h3>
+
+                <!--
                 ============================================================================
-                ASIDE: Image/field toggle menu
-                ============================================================================
-                -->
-
-                <aside class="menu" id="asidemenu">
-
-                    <!-- Close aside menu -->
-                    <img class="closeaside" src="images/misc/close.png" onclick="closemenu()">
-
-                    <!-- Headers and list of (hopeful) future applicaiton functionalities -->
-                    <h2>
-                        Menu
-                    </h2>
-
-                    <ul class="no-bullets-list">
-                        <li> <a href="#" onclick="resetmap()"> Reset Map </a></li>
-                        <li> 
-                            <input type="file" id="selected-file" class="hide" accept=".pdf" />
-                            <a href="#" onclick="uploadpdf()" > Upload Assessment Report </a>
-                        </li>
-                    </ul>
-            
-                    <h3> 
-                        Exploration Licenses
-                    </h3>
-            
-                    <ul class="no-bullets-list">
-                        <li> <a href="#" onclick="currentclaims()"> Active </a> </li>
-                        <li> <a href="#" onclick="historicclaims()"> Historic </a> </li>
-                    </ul>
-                    
-                    <h3>
-                        Historic Data
-                    </h3>
-            
-                    <ul class="no-bullets-list">
-                        <li> <a href="#" onclick="mineraltenure()"> Mineral Resources </a> </li>
-                        <li> <a href="#" onclick="drillcollars()"> Drilling </a> </li>
-                        <li> <a href="#" onclick="mineralshowings()"> Mineral Showings </a> </li>
-                        <li> <a href="#" onclick="geophysics()"> Geophysics </a> </li>
-                        <li> <a href="#" onclick="bedrockmaps()"> Maps </a> </li>
-                    </ul>
-            
-                    <h3>
-                        Bonus Content!
-                    </h3>
-            
-                    <ul class="no-bullets-list">
-                        <li> <a href="html/chrisrocks.html" > Chris' Rock Collection </a></li>
-                    </ul>
-            
-                </aside>
-
-                <!-- 
-                ============================================================================
-                FOOTER: Search/query results
+                TABLE: Tabular formation for search/query results
                 ============================================================================
                 -->
 
-                <footer class="searchresults" id="footer-serach">
-
-                    <!-- Close search results -->
-                    <img class="closefooter" src="images/misc/close.png" onclick="closesearch()" alt="close button">
-                    
-                    <!-- Linked to search bar to display what is typed in Display in the same line?-->
-                    <h3 id="search-output"> Search Results: </h3>
-
-                    <!--
-                    ============================================================================
-                    TABLE: Tabular formation for search/query results
-                    ============================================================================
-                    -->
-
-                    <table class="tabularresults" id="table">
-                        <!-- Table headers -->
-                        <thead>
-                            <tr>
-                                <th width="22%"> Company </th>
-                                <th width="14%"> License Number </th>
-                                <th width="12%"> Location </th>
-                                <th width="12%"> Status </th>
-                                <th width="12%"> Active From </th>
-                                <th width="12%"> Active To </th>
-                                <th width="16%"> Total Expenditures </th>
-                            </tr>
-                        </thead>
-                        <!-- Table rows filled by Javascript activated template -->
-                    </table>
-
-                    <!-- Template to autopopulate table rows -->
-                    <template id="search-row">
+                <table class="tabularResults" id="table">
+                    <!-- Table headers -->
+                    <thead>
                         <tr>
-                            <td class="company" id="data-company"></td>
-                            <td class="license" id="data-license"></td>
-                            <td class="location" id="data-location"></td>
-                            <td class="status" id="data-status"></td>
-                            <td class="active" id="data-active"></td>
-                            <td class="unactive" id="data-unactive"></td>
-                            <td class="expenditures" id="data-expenditures"></td>
+                            <th width="22%"> Company </th>
+                            <th width="14%"> License Number </th>
+                            <th width="12%"> Location </th>
+                            <th width="12%"> Status </th>
+                            <th width="12%"> Active From </th>
+                            <th width="12%"> Active To </th>
+                            <th width="16%"> Total Expenditures </th>
                         </tr>
-                    </template>
+                    </thead>
+                    <!-- Table rows filled by Javascript activated template -->
+                </table>
 
-                </footer>
-            </main>
-        </div>
+                <!-- Template to autopopulate table rows -->
+                <template id="search-row">
+                    <tr>
+                        <td class="company" id="data-company"></td>
+                        <td class="license" id="data-license"></td>
+                        <td class="location" id="data-location"></td>
+                        <td class="status" id="data-status"></td>
+                        <td class="active" id="data-active"></td>
+                        <td class="unactive" id="data-unactive"></td>
+                        <td class="expenditures" id="data-expenditures"></td>
+                    </tr>
+                </template>
+
+            </footer>
+        </main>
     </div>
 </body>
 </html>
