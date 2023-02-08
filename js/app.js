@@ -26,7 +26,6 @@ function openmenu(){
 
     // Show the meanu
     toggleaside.style.right = "0px";
-
 }
 
 function opensearch(){
@@ -39,8 +38,6 @@ function opensearch(){
     // Show the search results
     togglefooter.style.bottom = "0px";
 }
-
-
 
 // ============================================================================
 // Search Funcitons (NAV & FOOTER Tabs)
