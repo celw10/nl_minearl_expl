@@ -1,0 +1,127 @@
+/* ============================================================================
+/* Styling for Chirs' Rocks Sub-Page
+/* ============================================================================
+
+/* Styling for entire document */
+*{
+    font-family: sans-serif;
+}
+
+/* ============================================================================
+/* Container Styling
+/* ============================================================================
+
+/* HTML Style */
+html {
+    width: 100vw;
+}
+
+/* Sub-page body container */
+.chrisRocks{
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+/*============================================================================
+/* Cover Slideshow
+/*============================================================================
+
+/* Slideshow */
+.slideShow{
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+    margin: auto;
+}
+.rockTypeContainers{
+    display: none;
+    overflow: hidden;
+}
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+.dots{
+    position: absolute;
+    width: 100vw;
+    bottom: 10px;
+    text-align: center;
+}
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 2px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+  
+  /* Images */
+.rockTypeImages{
+    object-fit: cover;
+    margin: auto;
+    display: block;
+    max-height: 90vh;
+    min-width: 100vw;
+    cursor: pointer;
+    transition: transform 1s ease-in-out;
+}
+.rockTypeImages:hover{
+    transform: scale(1.1)
+}
+  
+  /* Text */
+.typeHeader{
+    position: absolute;
+    top: 0;
+    width: 98vw;
+    padding: 1vw;
+    text-align: center;
+}
+.rockTypeHeader{
+    font-style: bold;
+    font-size: 250%;
+    text-shadow: 1px 1px 10px white;
+}
+.rockTypeExplination{
+    font-style: italic;
+    font-size: 125%;
+    text-shadow: 1px 1px 10px white;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+.rockTypeContainers:hover .rockTypeExplination{
+    opacity: 1;
+}
