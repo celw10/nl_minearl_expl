@@ -277,18 +277,20 @@ ul li {
 }
 
 /*============================================================================
-/* Styling for Chris' Rocks
+/* Cover Slideshow
 /*============================================================================
 
 
-/* Slideshow Styling */
+/* Slideshow */
 .slideShow{
   width: 100vw;
+  height: 90vh;
   position: relative;
   margin: auto;
 }
 .rockTypeContainers{
   display: none;
+  overflow: hidden;
 }
 .prev, .next{
   cursor: pointer;
@@ -315,7 +317,7 @@ ul li {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
+  margin: 2px 2px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -326,22 +328,28 @@ ul li {
 }
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
 }
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
 }
 
-/* I want to size images beter */
+/* Images */
 .rockTypeImages{
   object-fit: cover;
-  max-width: 100vw;
-  max-height: 100vh;
-  height: auto;
+  margin: auto;
+  display: block;
+  max-height: 90vh;
+  min-width: 100vw;
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+}
+.rockTypeImages:hover{
+  transform: scale(1.1)
 }
 
-/* Header Styling */
+/* Text */
 .typeHeader{
   position: absolute;
   top: 0;
@@ -356,4 +364,10 @@ ul li {
 .rockTypeExplination{
   font-style: italic;
   font-size: 125%;
+  box-shadow: rgba(187, 187, 187, 0.5);
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+.rockTypeContainers:hover .rockTypeExplination{
+  opacity: 1;
 }
