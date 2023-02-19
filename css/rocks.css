@@ -143,20 +143,16 @@ header{
     text-align: center;
     color: white;
     padding: 24px;
-    margin: 2px;
     font-size: 80%;
 }
 .row{
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4px;
 }
 .column{
     flex: 50%;
-    padding: 0 4px;
 }
 .column img{
-    margin-top: 8px;
     vertical-align: middle;
 }
 
@@ -166,7 +162,12 @@ header{
     transition: transform 1s ease-in-out;
 }
 .gridImage:hover{
-    transform: scale(1.1)
+    transform: scale(1.25);
+}
+
+.imgbox{
+    margin: 4px 2px 4px 2px;
+    overflow: hidden;
 }
 
 /* Button Styling */
@@ -185,4 +186,13 @@ header{
 .btn.active {
     background-color: #717171;
     color: white;
+}
+
+/*============================================================================
+/* Cursor
+/*============================================================================
+
+/* Cursor styling over grid images */
+.cursor{
+    cursor: url('../images/misc/circle.png'), auto;
 }
