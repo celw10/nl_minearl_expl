@@ -158,7 +158,6 @@ header{
 
 .gridImage{
     width: 100%;
-    cursor: pointer;
     transition: transform 1s ease-in-out;
 }
 .gridImage:hover{
@@ -192,7 +191,13 @@ header{
 /* Cursor
 /*============================================================================
 
-/* Cursor styling over grid images */
-.cursor{
-    cursor: url('../images/misc/circle.png'), auto;
+/* Cursor styling over grid images - simple for now, add transitions */
+.imageCursor{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    pointer-events: none;
 }

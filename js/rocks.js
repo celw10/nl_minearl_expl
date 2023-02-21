@@ -89,3 +89,32 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+// ============================================================================
+// Cursor
+// ============================================================================
+
+let cursor = document.getElementById('cursortest');
+
+const onMouseMove = (e) =>{
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+}
+
+document.addEventListener('mousemove', onMouseMove);
+
+const imgboxes = document.querySelector('.imgbox')
+
+document.body.addEventListener('mousemove', onMouseMove);
+  imgboxes.addEventListener('mouseenter', onMouseHover);
+  imgboxes.addEventListener('mouseleave', onMouseHoverOut);
+
+
+// THIS GIVES ME HOVER/NOT HOVER FUNCTIONALITY ON ORIGINGAL CURSOR/CURSOR TEST IMAGE
+function onMouseHover() {
+  console.log("hovering")
+}
+
+function onMouseHoverOut() {
+  console.log("not hovering")
+}
