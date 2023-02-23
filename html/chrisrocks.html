@@ -27,15 +27,34 @@ HEAD
 
 <body class="chrisRocks">
 
+    <!-- Custom cursor for page -->
+    <div id="cursorTrace">
+
+        <!-- I want an inner circle that follows the outer and appears when overlaying a clickable image -->
+        <div class="outerCircle">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke="white" stroke-width="1" fill="none"></circle>
+            </svg>
+        </div>
+        <div>
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0" fill="white"></circle>
+            </svg>
+        </div>
+        
+        <p>TEST</p> <!-- Style text here rather than through inner html: get element by ID then update this text-->
+    </div>
+
     <header>
         <h1> Rock <em> Types </em> </h1>
     </header>
+
 
     <!-- Slideshow -->
     <div class="slideShow">
 
         <!-- Igneous Rocks Section -->
-        <div class="rockTypeContainers fade">
+        <div class="rockTypeContainers fade" id="igneous">
             <!-- Background image -->
             <img class="rockTypeImages" src="../images/chrisrocks/volcanoigneous.jpg"> 
 
@@ -50,7 +69,7 @@ HEAD
         </div>
 
         <!-- Sedimentary Rocks Section -->
-        <div class="rockTypeContainers fade">
+        <div class="rockTypeContainers fade" id="sedimentary">
             <!-- Background image -->
             <img class="rockTypeImages" src="../images/chrisrocks/StratifiedCliffBeach.jpg">
 
@@ -65,7 +84,7 @@ HEAD
         </div>
 
         <!-- Metamorphic Rocks Rocks Section -->
-        <div class="rockTypeContainers fade"> 
+        <div class="rockTypeContainers fade" id="metamorphic"> 
             <!-- Background image -->
             <img class="rockTypeImages" src="../images/chrisrocks/mountainsmetamorphic.jpg">
 
@@ -80,7 +99,7 @@ HEAD
         </div>
 
         <!-- Minerals/Ore Section -->
-        <div class="rockTypeContainers fade">
+        <div class="rockTypeContainers fade" id="minearls">
             <!-- Background image -->
             <img class="rockTypeImages" src="../images/chrisrocks/MineralsMine.jpg">
 
@@ -118,28 +137,7 @@ HEAD
     <div class="row">
         <div class="column">
 
-            <div class="imgbox">
-                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_landscape.jpg">
-                <!-- CAN I USE SVG TO MAKE BETTER GRAPHICS? -->
-                <div class="imageCursor" id="cursortest"></div>
-            </div>
-
-            <div class="imgbox">
-                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_portrait.jpg">
-            </div>
-
-            <div class="imgbox">
-                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_landscape.jpg">
-            </div>
-
-            <div class="imgbox">
-                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_portrait.jpg">
-            </div>
-
-        </div>
-        <div class="column">
-
-            <div class="imgbox">
+            <div class="imgbox" id="sample-01">
                 <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_landscape.jpg">
             </div>
 
@@ -194,6 +192,25 @@ HEAD
             </div>
 
         </div>
-      </div>
+        <div class="column">
+
+            <div class="imgbox">
+                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_landscape.jpg">
+            </div>
+
+            <div class="imgbox">
+                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_portrait.jpg">
+            </div>
+
+            <div class="imgbox">
+                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_landscape.jpg">
+            </div>
+
+            <div class="imgbox">
+                <img class="gridImage" src="../images/chrisrocks/collection/rockplaceholder_portrait.jpg">
+            </div>
+
+        </div>
+    </div>
 
 </body>

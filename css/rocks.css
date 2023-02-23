@@ -6,6 +6,7 @@
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
+    cursor: none;
 }
 
 /* ============================================================================
@@ -48,7 +49,6 @@ header{
     overflow: hidden;
 }
 .prev, .next{
-    cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
@@ -75,7 +75,6 @@ header{
     text-align: center;
 }
 .dot{
-    cursor: pointer;
     height: 15px;
     width: 15px;
     margin: 2px 2px;
@@ -103,7 +102,6 @@ header{
     display: block;
     max-height: 90vh;
     min-width: 100vw;
-    cursor: pointer;
     transition: transform 1s ease-in-out;
 }
 .rockTypeImages:hover{
@@ -148,7 +146,7 @@ header{
 .row{
     display: flex;
     flex-wrap: wrap;
-}
+} 
 .column{
     flex: 50%;
 }
@@ -191,13 +189,23 @@ header{
 /* Cursor
 /*============================================================================
 
-/* Cursor styling over grid images - simple for now, add transitions */
-.imageCursor{
-    position: absolute;
-    transform: translate(-50%,-50%);
-    height: 16px;
-    width: 16px;
+/* Cursor styling for entire  page */
+#cursorTrace {
+    z-index: 1; /* Set below my images for some reason? */
+    width: 32px;
+    height: 32px;
+    border: 0.5px solid white;
     border-radius: 50%;
-    border: 2px solid white;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    transition: transform 300ms linear;
     pointer-events: none;
+  }
+
+#cursorTrace P{
+    position: relative;
+    color: white;
+    left: 100px;
 }
+
+
