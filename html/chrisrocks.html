@@ -30,19 +30,12 @@ HEAD
     <!-- Custom cursor for page -->
     <div id="cursorTrace">
 
-        <!-- I want an inner circle that follows the outer and appears when overlaying a clickable image -->
-        <div class="outerCircle">
-            <svg height="30" width="30">
-                <circle cx="15" cy="15" r="12" stroke="white" stroke-width="1" fill="none"></circle>
-            </svg>
-        </div>
-        <div>
-            <svg height="10" width="10">
-                <circle cx="5" cy="5" r="4" stroke-width="0" fill="white"></circle>
-            </svg>
-        </div>
-        
-        <p>TEST</p> <!-- Style text here rather than through inner html: get element by ID then update this text-->
+        <svg height="30" width="30">
+            <circle id="innerCircle" cx="15" cy="15" r="10" stroke-width="0" fill="white" opacity="0"></circle>
+        </svg>
+
+        <h2 id="cursorText"> </h2>
+    
     </div>
 
     <header>

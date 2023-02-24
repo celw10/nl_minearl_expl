@@ -121,7 +121,12 @@ function onMouseHoverOut() {
 }
 */
 
+// Constants from the DOM
 const cursorTrace = document.querySelector("#cursorTrace");
+const cursorText = document.querySelector("#cursorText")
+
+console.log(cursorTrace)
+console.log(cursorText)
 
 // globals for current mouse x / y coordinates and offset
 let x = 0;
@@ -133,7 +138,7 @@ let tracerX = 0;
 let tracerY = 0;
 
 // acceleration speed of cursor animation
-let speed = 0.25;
+let speed = 0.1;
 
 // Animation function for cursor movements (found on SO)
 function animate(){
@@ -192,6 +197,11 @@ const rockType = [igneous, sedimentary, metamorphic, minearls]
 // Rock Sample List Elements to Grab
 const sample01 = document.getElementById("sample-01");
 
+// Function to scale SVG
+function scaleCircle() {
+  document.querySelector("#innerCircle").setAttribute('opacity', '1'); // Opacity works, I'd rather scale it though
+}
+
 // Generic function for displaying custom data @ the tracer
 const handleElementMessage = (element_ref, message) =>
 {
@@ -207,26 +217,17 @@ const handleElementMessage = (element_ref, message) =>
 
   if (x_check && y_check) {
 
-    /* Initiate styling
-    var labelstyle = document.createElement('style')
-
-    // Proper styling for innerHTML for rock type images
-    if (rockType.includes(element_ref)) {
-      cursorTrace.innerHTML
-
-    } else { // Styling for a sample image
-
-    }
-    */
+    //Scale the SVG Circle
+    scaleCircle()
 
     console.log('setting HTML');
-    cursorTrace.innerHTML = message;
+    cursorText.innerHTML = message;
   }
 }
 
 const handleMessageReset = () =>
 {
-  cursorTrace.innerHTML = '';
+  cursorText.innerHTML = '';
 }
 
 //Event listners for defined elements

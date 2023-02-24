@@ -194,18 +194,18 @@ header{
     z-index: 1; /* Set below my images for some reason? */
     width: 32px;
     height: 32px;
-    border: 0.5px solid white;
+    border: 1px solid white;
     border-radius: 50%;
     transform: translate(-50%,-50%);
     position: absolute;
     transition: transform 300ms linear;
     pointer-events: none;
   }
-
-#cursorTrace P{
+#cursorText{
+    font-size: 32px;
     position: relative;
+    top: -30px; /* better way to position? */
+    left: 50px;
+    white-space: nowrap;
     color: white;
-    left: 100px;
 }
-
-
