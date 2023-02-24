@@ -198,9 +198,19 @@ const rockType = [igneous, sedimentary, metamorphic, minearls]
 const sample01 = document.getElementById("sample-01");
 
 // Function to scale SVG
-function scaleCircle() {
-  document.querySelector("#innerCircle").setAttribute('opacity', '1'); // Opacity works, I'd rather scale it though
-}
+//function scaleCircle() {
+ // document.querySelector("#innerCircle").setAttribute('opacity', '1'); // Opacity works, I'd rather scale it though
+//}
+//var svgDoc =  document.getElementsByTagName('svg')
+//svgDoc[0].pauseAnimations();
+//function runAnimation() {
+//  svgDoc[0].unpauseAnimations();
+//  console.log(console.log(svgDoc[0]))
+//}
+//function pauseAnimation() {
+//  svgDoc[0].pauseAnimations();
+//  console.log("test pause")
+//}
 
 // Generic function for displaying custom data @ the tracer
 const handleElementMessage = (element_ref, message) =>
@@ -218,16 +228,18 @@ const handleElementMessage = (element_ref, message) =>
   if (x_check && y_check) {
 
     //Scale the SVG Circle
-    scaleCircle()
+    //scaleCircle()
 
     console.log('setting HTML');
     cursorText.innerHTML = message;
+    //runAnimation()
   }
 }
 
 const handleMessageReset = () =>
 {
   cursorText.innerHTML = '';
+  //pauseAnimation()
 }
 
 //Event listners for defined elements
