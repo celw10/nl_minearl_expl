@@ -2,6 +2,7 @@
 // Slideshow: Chris' Rocks
 // ============================================================================
 
+// Initalize on first slide
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -15,6 +16,7 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+//Slideshow fuction
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("rockTypeContainers");
@@ -31,7 +33,20 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 } 
 
-/* Auto Play version
+/*
+
+// Toggle text for rock type explinations based on indexed slide
+function showText(n) {
+  text = document.querySelectorAll('.rockTypeExplination');
+  text[n-1].style.animationName = 'textAppear'
+  text[n-1].style.animationPlayState =  'running';
+}
+function hideText(n) {
+  text = document.querySelectorAll('.rockTypeExplination');
+  text[n-1].style.animationName = 'revertTextAppear'
+}
+
+ Auto Play version
 let slideIndex = 0;
 showSlides();
 
@@ -58,11 +73,23 @@ var elements = document.getElementsByClassName("column");
 // Declare a loop variable
 var i;
 
+// Properly size text based on image layout
+function sizePopupText(s) {
+
+  const sampleText = document.querySelectorAll(".sampleText");
+
+  for (let j = 0; j < sampleText.length; j++) {
+    sampleText[j].style.fontSize = s;
+  }
+}
+
 // Full-width images
 function one() {
     for (i = 0; i < elements.length; i++) {
     elements[i].style.flex = "100%";
   }
+  // Set text size
+  sizePopupText('200%')
 }
 
 // Two images side by side
@@ -70,6 +97,8 @@ function two() {
   for (i = 0; i < elements.length; i++) {
     elements[i].style.flex = "50%";
   }
+  // Set text size
+  sizePopupText('100%')
 }
 
 // Four images side by side
@@ -77,6 +106,8 @@ function four() {
   for (i = 0; i < elements.length; i++) {
     elements[i].style.flex = "25%";
   }
+  // Set text size
+  sizePopupText('50%')
 }
 
 // Add active class to the current button (highlight it)
@@ -90,43 +121,35 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
+// Toggle sample inforamtion on click
+function sampleText(n) {
+
+  const sampleText = document.querySelectorAll(".sampleText")[n]; 
+
+  if (sampleText.style.animationName == 'textAppear' && sampleText.style.animationPlayState == 'paused') {
+    sampleText.style.animationName = 'textAppear';
+  }
+  else if (sampleText.style.animationName == 'textAppear') {
+    sampleText.style.animationName = 'revertTextAppear';
+  }
+  else {
+    sampleText.style.animationName = 'textAppear';
+  }
+  
+  sampleText.style.animationPlayState = 'running';
+}
+
+// Configure text size basedon image grid
+
+
 // ============================================================================
 // Cursor
 // ============================================================================
 
-/* First crack at custom cursor
-let cursor = document.getElementById('cursortest');
-
-const onMouseMove = (e) =>{
-  cursor.style.left = e.pageX + 'px';
-  cursor.style.top = e.pageY + 'px';
-}
-
-document.addEventListener('mousemove', onMouseMove);
-
-const imgboxes = document.querySelector('.imgbox') //querySelectorAll - get indexes back, im getting the first element with imgbox here
-
-document.body.addEventListener('mousemove', onMouseMove);
-  imgboxes.addEventListener('mouseenter', onMouseHover);
-  imgboxes.addEventListener('mouseleave', onMouseHoverOut);
-
-
-// THIS GIVES ME HOVER/NOT HOVER FUNCTIONALITY ON ORIGINGAL CURSOR/CURSOR TEST IMAGE
-function onMouseHover() {
-  console.log("hovering")
-}
-
-function onMouseHoverOut() {
-  console.log("not hovering")
-}
-*/
-
 // Constants from the DOM
 const cursorTrace = document.querySelector("#cursorTrace");
 const cursorText = document.querySelector("#cursorText")
-
-console.log(cursorTrace)
-console.log(cursorText)
+const innerCricle = document.querySelector("#innerCircle")
 
 // globals for current mouse x / y coordinates and offset
 let x = 0;
@@ -181,7 +204,6 @@ const handleMouseMove = (event) =>
 // listener for tracking mouse position
 document.addEventListener("mousemove", throttle(handleMouseMove, 10));
 
-
 // listener for testing coordinates stored in globals
 document.addEventListener("click", (event) => {
   console.log(x, y);
@@ -195,22 +217,9 @@ const minearls = document.getElementById("minearls");
 const rockType = [igneous, sedimentary, metamorphic, minearls]
 
 // Rock Sample List Elements to Grab
-const sample01 = document.getElementById("sample-01");
+const sample00 = document.getElementById("sample-00");
 
-// Function to scale SVG
-//function scaleCircle() {
- // document.querySelector("#innerCircle").setAttribute('opacity', '1'); // Opacity works, I'd rather scale it though
-//}
-//var svgDoc =  document.getElementsByTagName('svg')
-//svgDoc[0].pauseAnimations();
-//function runAnimation() {
-//  svgDoc[0].unpauseAnimations();
-//  console.log(console.log(svgDoc[0]))
-//}
-//function pauseAnimation() {
-//  svgDoc[0].pauseAnimations();
-//  console.log("test pause")
-//}
+//HOW MANY ROCK SAMPLES?
 
 // Generic function for displaying custom data @ the tracer
 const handleElementMessage = (element_ref, message) =>
@@ -227,19 +236,26 @@ const handleElementMessage = (element_ref, message) =>
 
   if (x_check && y_check) {
 
-    //Scale the SVG Circle
-    //scaleCircle()
-
-    console.log('setting HTML');
+    // Set text based off image hover
     cursorText.innerHTML = message;
-    //runAnimation()
+
+    // Run text animation on image hover
+    cursorText.style.animationName = 'textAppear';
+    cursorText.style.animationPlayState = 'running';
+
+    // Run Animation on image hover
+    innerCricle.style.animationName = 'scale'
+    innerCricle.style.animationPlayState = 'running';
   }
 }
 
-const handleMessageReset = () =>
-{
-  cursorText.innerHTML = '';
-  //pauseAnimation()
+const handleMessageReset = () => {
+
+  // Reset text animation;
+  cursorText.style.animationName = 'revertTextAppear';
+
+  // Reset cursro animation
+  innerCricle.style.animationName = 'revertScale';
 }
 
 //Event listners for defined elements
@@ -255,5 +271,7 @@ metamorphic.addEventListener('mouseleave', () => {handleMessageReset(metamorphic
 minearls.addEventListener('mousemove', () => {handleElementMessage(minearls, `Economic Minerals`)})
 minearls.addEventListener('mouseleave', () => {handleMessageReset(minearls)})
 
-sample01.addEventListener('mousemove', () => {handleElementMessage(sample01, `Hello, I'm A Rock!`)})
-sample01.addEventListener('mouseleave', () => {handleMessageReset(sample01)})
+sample00.addEventListener('mousemove', () => {handleElementMessage(sample00, `Hello, I'm A Rock!`)})
+sample00.addEventListener('mouseleave', () => {handleMessageReset(sample00)})
+
+/// MORE ROCK SAMPLES

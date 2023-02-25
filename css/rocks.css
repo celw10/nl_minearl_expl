@@ -18,19 +18,40 @@ html {
     width: 100vw;
 }
 
-/* Unique header style */
-header{
-    color: white;
-    font-size: 80%;
-    padding-left: 10px;
-}
-
 /* Sub-page body container */
 .chrisRocks{
     width: 100vw;
     margin: 0;
     background-color: black;
     overflow-x: hidden;
+}
+
+/*============================================================================
+/* Nav Styling
+/*============================================================================
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    align-items: center;
+    margin: 1vw;
+}
+nav h1{
+    flex: 6;
+    color: white;
+    font-size: 24px;
+}
+
+nav a{
+    flex: 1;
+    color: white;
+    text-decoration: none;
+    font-style: none;
+    transition: transform 1s ease-in-out;
+}
+
+nav a:hover {
+    transform: scale(1.1);
 }
 
 /*============================================================================
@@ -88,7 +109,7 @@ header{
 }
 .fade {
     animation-name: fade;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 @keyframes fade {
     from {opacity: .4}
@@ -116,11 +137,6 @@ header{
     padding: 1vw;
     text-align: center;
 }
-.rockTypeHeader{
-    font-style: bold;
-    font-size: 250%;
-    text-shadow: 1px 1px 10px white;
-}
 .rockTypeExplination{
     font-style: italic;
     font-size: 125%;
@@ -140,7 +156,7 @@ header{
 .header {
     text-align: center;
     color: white;
-    padding: 24px;
+    margin: 1%;
     font-size: 80%;
 }
 .row{
@@ -163,6 +179,7 @@ header{
 }
 
 .imgbox{
+    position: relative;
     margin: 4px 2px 4px 2px;
     overflow: hidden;
 }
@@ -185,6 +202,23 @@ header{
     color: white;
 }
 
+/* Sample text */
+.sampleText {
+    position: absolute;
+    top: 0;
+    margin: 5px;
+    text-align: left;
+    font-style: italic;
+    font-size: 125%;
+    color: black;
+    text-shadow: 1px 1px 10px white;
+    opacity: 0;
+    animation-name: textAppear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
 /*============================================================================
 /* Cursor
 /*============================================================================
@@ -201,42 +235,71 @@ header{
     transition: transform 300ms linear;
     pointer-events: none;
   }
+
+/* Popup text for image hover */
 #cursorText{
-    font-size: 32px;
-    position: relative;
-    top: -30px; /* better way to position? */
-    left: 50px;
+    font-size: 24px;
+    position: absolute;
+    top: -18px; /* better way to position? */
+    left: 40px;
     white-space: nowrap;
     color: white;
+    font-style: bold;
+    text-shadow: 1px 1px 10px black;
+    opacity: 1;
+    animation-name: textAppear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
-#innerCircle{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: white;
+@keyframes textAppear { /* also use this for rockTypeExplination */
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes revertTextAppear {
+    from{opacity: 1;}
+    to{opacity: 0;}
 }
 
-/*#innerCircle {
-    fill: transparent;
-    stroke: whitesmoke;
-    stroke-width: 5px;
-    stroke-dasharray: 471;
-    stroke-dashoffset: 471;
-    animation: clock-animation 100s linear infinite;
+/* Inner circle sizing animation for image hover */
+#innerCircle{
+    position: relative;
+    top: 14px;
+    left: 14px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    animation-name: scale;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
     animation-play-state: paused;
-    transition: animation-play-state;
 }
-.rockTypeContainers:hover #innerCircle{
-    animation-play-state: running;
+@keyframes scale {
+    from {
+        top: 14px;
+        left: 14px;
+        width: 6px;
+        height: 6px;
+    }
+    to {
+        top: 5px;
+        left: 5px;
+        width: 24px;
+        height: 24px;
+    }
 }
-@keyframes clock-animation {
-0% {
-    stroke-dashoffset: 471;
+@keyframes revertScale {
+    from {
+        top: 5px;
+        left: 5px;
+        width: 24px;
+        height: 24px;
+    }
+    to {
+        top: 14px;
+        left: 14px;
+        width: 6px;
+        height: 6px;
+    }
 }
-100% {
-    stroke-dashoffset: 0;
-}
-}*/
