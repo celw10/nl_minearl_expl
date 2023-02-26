@@ -1,11 +1,11 @@
+/* ============================================================================
+/* Container Styling
+/* ============================================================================
+
 /* Font family for entire document */
 *{
   font-family: sans-serif;
 }
-
-/* ============================================================================
-/* Container Styling
-/* ============================================================================
 
 /* HTML Style */
 html, body, #viewDiv {
@@ -20,7 +20,6 @@ html, body, #viewDiv {
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  pointer-events: none;
 }
 
 /* Container div for all subsequent overlay elements, nav, aside, footer, main, ect.*/

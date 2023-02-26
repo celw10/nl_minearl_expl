@@ -1,0 +1,37 @@
+/* ============================================================================
+/* Container Styling
+/* ============================================================================
+  
+/* Font family for entire document */
+*{
+    font-family: sans-serif;
+}
+
+/* HTML Style */
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+  }
+
+/* ============================================================================
+/* Body Styling
+/* ============================================================================
+
+/* Nav Header */
+nav {
+    display: flex;
+    align-items: center;
+    margin: 1vw;
+}
+nav h1 {
+    color: white;
+    font-size: 24px;
+}
+nav h1 a {
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+}
