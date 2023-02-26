@@ -1,65 +1,71 @@
 // ============================================================================
-// Tesseract Example: https://codepen.io/TranquilityDev/pen/wLQGMr
-// ============================================================================
+// Tesseract Example
+// ===========================================================================
 
-
-$("#form").on("submit", (e) => {
-  e.preventDefault();
-  
-  const file_list = $("#file").prop("files");
-  if (_.isEmpty(file_list)) {
-    alert("file Empty");
-    return;
-  }
-  const file = file_list[0];
-  if (file.type.indexOf("image") === -1) {
-    alert("Image");
-    return;
-  }
-
-  let status = {};
-  Tesseract.recognize(file, { lang: $("#lang").val() })
-    .progress((result) => {
-      let p = result.progress * 100;
-      if (!status[result.status]) {
-        status[result.status] = true;
-        $("#progress").append(`
-          <p>${result.status}</p>
-          <div class="progress">
-            <div class="progress-bar progress-bar${_.size(status)}"></div>
-          <div>
-        `);
-      }
-      if (_.isNaN(p)) {
-        p = 100;
-      }
-      $(`.progress-bar${_.size(status)}`)
-        .css({ width: `${p}%` })
-        .text(parseFloat(p).toFixed(2));
-    })
-    .catch(() => {
-      $(".progress-bar").addClass("progress-bar-error");
-      alert("処理に失敗しました");
-    })        
-    .then((result) => {
-      $(".progress-bar").addClass("progress-bar-success");
-      $("#result").text(result.text);
-        // var result = result.text.split(',');
-        var myStr = result.text
-        var newStr = myStr.replace(/\ /g,',');
-        
-
-    $("#fname").text(newStr[0]);
-    $("#add").text(result[2]+result[3]+result[4]);
-    $("#cell").text(result[5]);
-    $("#mail").text(result[6]);
-// var mobile = result[2].split(':');
-//     var mobile = mobile.split(',');
-//     alert(mobile)
-    alert(myStr.replace('Cell',''));
-    var newStr = myStr.replace(/\ /g, ',');
-    // alert(newStr)
-     
+// Image Processing Example
+const recognize = async ({ target: { files } }) => {
+    document.getElementById("imgInput").src = URL.createObjectURL(files[0]);
+    const worker = await Tesseract.createWorker({
+      // corePath: '/tesseract-core-simd.wasm.js',
+      // workerPath: "/dist/worker.dev.js"
     });
+    await worker.loadLanguage('eng');
+    await worker.initialize('eng');
 
-});
+    await worker.initialize();
+    const ret = await worker.recognize(files[0], {rotateAuto: true}, {imageColor: true, imageGrey: true, imageBinary: true});
+    document.getElementById("imgOriginal").src = ret.data.imageColor;
+    document.getElementById("imgGrey").src = ret.data.imageGrey;
+    document.getElementById("imgBinary").src = ret.data.imageBinary;
+}
+
+const elm = document.getElementById('uploader');
+elm.addEventListener('change', recognize);
+
+// Progress Update Example
+function progressUpdate(packet){
+	var log = document.getElementById('log');
+
+	if(log.firstChild && log.firstChild.status === packet.status){
+		if('progress' in packet){
+			var progress = log.firstChild.querySelector('progress')
+			progress.value = packet.progress
+		}
+	}else{
+		var line = document.createElement('div');
+		line.status = packet.status;
+		var status = document.createElement('div')
+		status.className = 'status'
+		status.appendChild(document.createTextNode(packet.status))
+		line.appendChild(status)
+
+		if('progress' in packet){
+			var progress = document.createElement('progress')
+			progress.value = packet.progress
+			progress.max = 1
+			line.appendChild(progress)
+		}
+
+		if(packet.status == 'done'){
+			var pre = document.createElement('pre')
+			pre.appendChild(document.createTextNode(packet.data.data.text))
+			line.innerHTML = ''
+			line.appendChild(pre)
+
+		}
+
+		log.insertBefore(line, log.firstChild)
+	}
+}
+
+async function recognizeFile(file) {
+
+    document.querySelector("#log").innerHTML = ''
+
+    const lang = document.querySelector('#langsel').value
+    const data = await Tesseract.recognize(file, lang, {
+        logger: progressUpdate,
+    });
+  
+    progressUpdate({ status: 'done', data });
+}

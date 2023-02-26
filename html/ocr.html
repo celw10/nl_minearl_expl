@@ -20,7 +20,7 @@ HEAD
     <!-- Link css -->
     <link rel="stylesheet" href="../css/tesseract.css">
 
-    <!-- Tesseract -->
+    <!-- Tesseract Link by CDN -->
     <script src='https://unpkg.com/tesseract.js@4.0.2/dist/tesseract.min.js'></script>
 
     <!-- Link JS -->
@@ -34,25 +34,51 @@ HEAD
         <h1> Optical Charachter Recognition (OCR) Example with <a href="https://tesseract.projectnaptha.com/"> Tesseract </a> </h1>
     </nav>
 
-    <div class="col-xs-6">
-        <form id="form" action="javascript:void(0)">
-          <div class="form-group">
-            <input id="file" type="file"/>
-          </div>
-          <div class="form-group">
-            <select class="form-control" id="lang">
-              <option value="eng">English</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <input class="btn btn-default" type="submit" value="submit"/>
-          </div>
-        </form>
-        <div id="result"></div>
-      </div>
-      <div class="col-xs-6">
-        <div id="progress"></div>
-      </div>
+    <div id='container'>
+        <p style="margin: 5px;">
+            Upload one of the provided test images for Tesseract API. 
+        </p>
+
+        <!-- File Upload -->
+        <input type="file" id='uploader' onchange="recognizeFile(window.lastFile=this.files[0])">
+
+        <!-- Select Language -->
+        <select id='langsel'>
+            <option value='eng' selected> English </option>
+        </select>
+    </div>
+
+    <p style="margin-left: 2%; color: white;">
+        Tesseract API image processing example workflow: 
+    </p>
+
+    <!-- Image Processing-->
+    <div class="row">
+        <div class="column">
+        <p style="padding-left: 5px;">Input Image</p>
+        <img id="imgInput" style="padding-left: 5px; max-width:45vw;">
+        </div>
+        <div class="column">
+        <p style="padding-left: 5px;">Rotated, Original Color</p>
+        <img id="imgOriginal" style="padding-left: 5px; max-width:45vw;">
+        </div>
+        <div class="column">
+        <p style="padding-left: 5px;">Rotated, Grey</p>
+        <img id="imgGrey" style="padding-left: 5px; max-width:45vw;">
+        </div>
+        <div class="column">
+        <p style="padding-left: 5px;">Rotated, Binary</p>
+        <img id="imgBinary" style="padding-left: 5px; max-width:45vw;">
+        </div>
+    </div>
+
+    <p style="margin-left: 2%; color: white;">
+        Tesseract OCR output: 
+    </p>
+
+    <!-- Progress Update -->
+    <div id="log" style="color: white;">
+        <p style="margin: 5px;"> Upload image through <em> Browse... </em> for OCR output </p>
     </div>
 
 </body>
