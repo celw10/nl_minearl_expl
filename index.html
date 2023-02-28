@@ -48,11 +48,11 @@ NAVIGATION
         <a href="html/ocr.html"> OCR Project </a>
     </nav>
 
-<!-- 
-============================================================================
-ROCK TYPE SLIDESHOW
-============================================================================
--->
+    <!-- 
+    ============================================================================
+    ROCK TYPE SLIDESHOW
+    ============================================================================
+    -->
 
     <div class="slideShow">
 
@@ -124,25 +124,38 @@ ROCK TYPE SLIDESHOW
         </div>
     </div>
 
-<!-- 
-============================================================================
-WORK SLIDESHOW
-============================================================================
--->
+    <!-- 
+    ============================================================================
+    WORK SLIDESHOW, CHRIS' ROCK COLLECTION HEADER
+    ============================================================================
+    -->
 
-    <div class="header" id="myHeader">
-        <h1> Chris' <em> Collection </em> </h1>
-        <p style="font-style: italic;"> Click the buttons to change grid view. Click an image for a description.</p>
-        <button class="btn" onclick="one()">1</button>
-        <button class="btn" onclick="two()">2</button>
-        <button class="btn" onclick="four()">4</button>
+    <!-- Setup flex container with header for Chris' Rock Collection & Slideshow -->
+    <div id="container">
+
+        <div class="header" id="myHeader">
+            <h1> Chris' Rock <em> Collection </em> </h1>
+            <p style="font-style: italic;"> Click the buttons to change grid view. Click an image for a description.</p>
+            <button class="btn" onclick="one()">1</button>
+            <button class="btn" onclick="two()">2</button>
+            <button class="btn" onclick="four()">4</button>
+        </div> 
+
+        <div class="buffer"></div>
+
+        <!-- Figure out how to not change sizes of flex containers -->
+        <div id="autoSlideSlow">
+            <img class="slideShowImages" src="https://images.unsplash.com/photo-1676973439811-791ef1c9e250?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"> 
+            <img class="slideShowImages" src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"> 
+        </div>
+
     </div>
 
-<!-- 
-============================================================================
-ROCK SAMPLE GRID
-============================================================================
--->
+    <!-- 
+    ============================================================================
+    ROCK SAMPLE GRID
+    ============================================================================
+    -->
 
     <div class="row">
         <div class="column">
@@ -198,5 +211,28 @@ ROCK SAMPLE GRID
 
         </div>
     </div>
+
+    <!-- 
+    ============================================================================
+    Generic Footer Information
+    ============================================================================
+    -->
+
+    <footer>
+        <!-- Contact links -->
+
+        <a href="https://www.linkedin.com/in/cwilliamsgeo/" class="social"> 
+            <img src="images/misc/linkedin_icon2.png" width="64" height="64" alt="linkedin" > 
+        </a>
+
+        <a href="https://github.com/celw10" class="social"> 
+            <img src="images/misc/github.png" width="64" height="64" alt="github" > 
+        </a>
+
+        <a href="mailto:celw10@mun.ca" class="social"> 
+            <img src="images/misc/email_icon.png" width="64" height="64" alt="email" > 
+        </a>  
+
+    </footer>
 
 </body>

@@ -1,5 +1,5 @@
 // ============================================================================
-// Slideshow: Chris' Rocks
+// Rock Types Slideshow
 // ============================================================================
 
 // Initalize on first slide
@@ -31,37 +31,33 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-} 
-
-/*
-
-// Toggle text for rock type explinations based on indexed slide
-function showText(n) {
-  text = document.querySelectorAll('.rockTypeExplination');
-  text[n-1].style.animationName = 'textAppear'
-  text[n-1].style.animationPlayState =  'running';
-}
-function hideText(n) {
-  text = document.querySelectorAll('.rockTypeExplination');
-  text[n-1].style.animationName = 'revertTextAppear'
 }
 
- Auto Play version
-let slideIndex = 0;
-showSlides();
+// ============================================================================
+// Field Work Slideshow
+// ============================================================================
 
-function showSlides() {
+let fwslideIndex = 0;
+fwshowSlides();
+
+function fwshowSlides() {
+
   let i;
-  let slides = document.getElementsByClassName("rockTypeContainers");
+  let slides = document.getElementsByClassName("slideShowImages");
+
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 10000); // Change image every 2 seconds
-} 
-*/
+
+  fwslideIndex++;
+
+  if (fwslideIndex > slides.length) {
+    fwslideIndex = 1}
+    
+  slides[fwslideIndex-1].style.display = "block";
+
+  setTimeout(fwshowSlides, 5000); // Change image every 2 seconds
+};
 
 // ============================================================================
 // Image Grid
@@ -218,8 +214,13 @@ const rockType = [igneous, sedimentary, metamorphic, minearls]
 
 // Rock Sample List Elements to Grab
 const sample00 = document.getElementById("sample-00");
-
-//HOW MANY ROCK SAMPLES?
+const sample01 = document.getElementById("sample-01");
+const sample02 = document.getElementById("sample-02");
+const sample03 = document.getElementById("sample-03");
+const sample04 = document.getElementById("sample-04");
+const sample05 = document.getElementById("sample-05");
+const sample06 = document.getElementById("sample-06");
+const sample07 = document.getElementById("sample-07");
 
 // Generic function for displaying custom data @ the tracer
 const handleElementMessage = (element_ref, message) =>
@@ -259,6 +260,7 @@ const handleMessageReset = () => {
 }
 
 //Event listners for defined elements
+
 igneous.addEventListener('mousemove', () => {handleElementMessage(igneous, `Igneous Rocks`)})
 igneous.addEventListener('mouseleave', () => {handleMessageReset(igneous)})
 
@@ -274,4 +276,23 @@ minearls.addEventListener('mouseleave', () => {handleMessageReset(minearls)})
 sample00.addEventListener('mousemove', () => {handleElementMessage(sample00, `Hello, I'm A Rock!`)})
 sample00.addEventListener('mouseleave', () => {handleMessageReset(sample00)})
 
-/// MORE ROCK SAMPLES
+sample01.addEventListener('mousemove', () => {handleElementMessage(sample01, `Hello, I'm A Rock!`)})
+sample01.addEventListener('mouseleave', () => {handleMessageReset(sample01)})
+
+sample02.addEventListener('mousemove', () => {handleElementMessage(sample02, `Hello, I'm A Rock!`)})
+sample02.addEventListener('mouseleave', () => {handleMessageReset(sample02)})
+
+sample03.addEventListener('mousemove', () => {handleElementMessage(sample03, `Hello, I'm A Rock!`)})
+sample03.addEventListener('mouseleave', () => {handleMessageReset(sample03)})
+
+sample04.addEventListener('mousemove', () => {handleElementMessage(sample04, `Hello, I'm A Rock!`)})
+sample04.addEventListener('mouseleave', () => {handleMessageReset(sample04)})
+
+sample05.addEventListener('mousemove', () => {handleElementMessage(sample05, `Hello, I'm A Rock!`)})
+sample05.addEventListener('mouseleave', () => {handleMessageReset(sample05)})
+
+sample06.addEventListener('mousemove', () => {handleElementMessage(sample06, `Hello, I'm A Rock!`)})
+sample06.addEventListener('mouseleave', () => {handleMessageReset(sample06)})
+
+sample07.addEventListener('mousemove', () => {handleElementMessage(sample07, `Hello, I'm A Rock!`)})
+sample07.addEventListener('mouseleave', () => {handleMessageReset(sample07)})
