@@ -77,7 +77,7 @@ nav a:hover {
     padding: 16px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -96,9 +96,9 @@ nav a:hover {
     text-align: center;
 }
 .dot{
-    height: 15px;
-    width: 15px;
-    margin: 2px 2px;
+    height: 22px;
+    width: 22px;
+    margin: 5px 5px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -139,8 +139,9 @@ nav a:hover {
 }
 .rockTypeExplination{
     font-style: italic;
+    font-weight: bold;
     font-size: 125%;
-    text-shadow: 1px 1px 10px white;
+    text-shadow: 0 0 100px white;
     transition: opacity 1s ease-in-out;
     opacity: 0;
 }
@@ -163,7 +164,7 @@ nav a:hover {
 
 /* Rock collection header & button container */
 .header {
-    flex: 0 0 48vw;
+    flex: 0 0 35vw;
     text-align: center;
     color: white;
     margin: 1%;
@@ -171,6 +172,7 @@ nav a:hover {
 }
 /* Button Styling */
 .btn {
+    margin: 2px 2px;
     border: none;
     outline: none;
     padding: 10px 16px;

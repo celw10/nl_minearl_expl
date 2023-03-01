@@ -8,11 +8,8 @@
 }
 
 /* HTML Style */
-html, body, #viewDiv {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
+html {
+  width: 100vw;
 }
 
 /* Main body container */
@@ -20,6 +17,12 @@ html, body, #viewDiv {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+}
+
+/* Background image spanning page enxtent, placeholder for GIS API */
+.backgroundimg{
+  height: 100vh;
+  width: 100%;
 }
 
 /* Container div for all subsequent overlay elements, nav, aside, footer, main, ect.*/
