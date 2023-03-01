@@ -223,8 +223,8 @@ const sample06 = document.getElementById("sample-06");
 const sample07 = document.getElementById("sample-07");
 
 // Generic function for displaying custom data @ the tracer
-const handleElementMessage = (element_ref, message) =>
-{
+const handleElementMessage = (element_ref, message) =>{
+  
   // extract element's container data from DOM
   const {x: left_bound, width, height } = element_ref.getBoundingClientRect();
 

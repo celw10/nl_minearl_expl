@@ -162,6 +162,55 @@ realFileButton.addEventListener("change", function() {
 })
 
 // ============================================================================
+// Menu Funcitons
+// ============================================================================
+
+// Reset map to basemap
+function resetmap(){
+    document.getElementById('gis').src = "images/gis/EastCoastBasemap.jpg"
+}
+
+// Upload document
+function uploadpdf(){
+    document.getElementById('selected-file').click()
+}
+
+// Toggle current claims
+function currentclaims(){
+    document.getElementById('gis').src = "images/gis/MineralExplorationClaims.jpg"
+}
+
+// Toggle historic claims
+function historicclaims(){
+    document.getElementById('gis').src = "images/gis/HistoricExplorationClaims.jpg"
+}
+
+// Toggle mienral tenure
+function mineraltenure(){
+    document.getElementById('gis').src = "images/gis/MineralTenure.jpg"
+}
+
+// Toggle drill collars
+function drillcollars(){
+    document.getElementById('gis').src = "images/gis/DiamondDrillHoles.jpg"
+}
+
+// Toggle mineral showings
+function mineralshowings(){
+    document.getElementById('gis').src = "images/gis/MineralOccurrences.jpg"
+}
+
+// Toggle geophysics
+function geophysics(){
+    document.getElementById('gis').src = "images/gis/RegionalMagnetics.jpg"
+}
+
+// Toggle bedrock geology maps
+function bedrockmaps(){
+    document.getElementById('gis').src = "images/gis/GeneralizedBedrockGeology.jpg"
+}
+
+// ============================================================================
 // ArcGIS Setup Map: Configure NL Mineral Claims/Historic Claims 
 // ============================================================================
 
