@@ -29,6 +29,10 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
+  //Initiate the animation here before slide change
+  slides[slideIndex-1].style.animationPlayState = 'running';
+
+  //Change slide and dot
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
@@ -221,6 +225,10 @@ const sample04 = document.getElementById("sample-04");
 const sample05 = document.getElementById("sample-05");
 const sample06 = document.getElementById("sample-06");
 const sample07 = document.getElementById("sample-07");
+const sample08 = document.getElementById("sample-08");
+const sample09 = document.getElementById("sample-09");
+const sample10 = document.getElementById("sample-10");
+const sample11 = document.getElementById("sample-11");
 
 // Generic function for displaying custom data @ the tracer
 const handleElementMessage = (element_ref, message) =>{
@@ -273,26 +281,38 @@ metamorphic.addEventListener('mouseleave', () => {handleMessageReset(metamorphic
 minearls.addEventListener('mousemove', () => {handleElementMessage(minearls, `Economic Minerals`)})
 minearls.addEventListener('mouseleave', () => {handleMessageReset(minearls)})
 
-sample00.addEventListener('mousemove', () => {handleElementMessage(sample00, `Hello, I'm A Rock!`)})
+sample00.addEventListener('mousemove', () => {handleElementMessage(sample00, `Bornite`)})
 sample00.addEventListener('mouseleave', () => {handleMessageReset(sample00)})
 
-sample01.addEventListener('mousemove', () => {handleElementMessage(sample01, `Hello, I'm A Rock!`)})
+sample01.addEventListener('mousemove', () => {handleElementMessage(sample01, `Malachite`)})
 sample01.addEventListener('mouseleave', () => {handleMessageReset(sample01)})
 
-sample02.addEventListener('mousemove', () => {handleElementMessage(sample02, `Hello, I'm A Rock!`)})
+sample02.addEventListener('mousemove', () => {handleElementMessage(sample02, `Granite`)})
 sample02.addEventListener('mouseleave', () => {handleMessageReset(sample02)})
 
-sample03.addEventListener('mousemove', () => {handleElementMessage(sample03, `Hello, I'm A Rock!`)})
+sample03.addEventListener('mousemove', () => {handleElementMessage(sample03, `Semi-Massive Sulphide`)})
 sample03.addEventListener('mouseleave', () => {handleMessageReset(sample03)})
 
-sample04.addEventListener('mousemove', () => {handleElementMessage(sample04, `Hello, I'm A Rock!`)})
+sample04.addEventListener('mousemove', () => {handleElementMessage(sample04, `Obsidian`)})
 sample04.addEventListener('mouseleave', () => {handleMessageReset(sample04)})
 
-sample05.addEventListener('mousemove', () => {handleElementMessage(sample05, `Hello, I'm A Rock!`)})
+sample05.addEventListener('mousemove', () => {handleElementMessage(sample05, `Apatite`)})
 sample05.addEventListener('mouseleave', () => {handleMessageReset(sample05)})
 
-sample06.addEventListener('mousemove', () => {handleElementMessage(sample06, `Hello, I'm A Rock!`)})
+sample06.addEventListener('mousemove', () => {handleElementMessage(sample06, `Labradorite`)})
 sample06.addEventListener('mouseleave', () => {handleMessageReset(sample06)})
 
-sample07.addEventListener('mousemove', () => {handleElementMessage(sample07, `Hello, I'm A Rock!`)})
+sample07.addEventListener('mousemove', () => {handleElementMessage(sample07, `Peroditite`)})
 sample07.addEventListener('mouseleave', () => {handleMessageReset(sample07)})
+
+sample08.addEventListener('mousemove', () => {handleElementMessage(sample08, `Massive Sulphide`)})
+sample08.addEventListener('mouseleave', () => {handleMessageReset(sample08)})
+
+sample09.addEventListener('mousemove', () => {handleElementMessage(sample09, `Petrified Wood`)})
+sample09.addEventListener('mouseleave', () => {handleMessageReset(sample09)})
+
+sample10.addEventListener('mousemove', () => {handleElementMessage(sample10, `Fuchsite`)})
+sample10.addEventListener('mouseleave', () => {handleMessageReset(sample10)})
+
+sample11.addEventListener('mousemove', () => {handleElementMessage(sample11, `Bismuth`)})
+sample11.addEventListener('mouseleave', () => {handleMessageReset(sample11)})

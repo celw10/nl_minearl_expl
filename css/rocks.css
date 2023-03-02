@@ -123,7 +123,11 @@ nav a:hover {
     display: block;
     max-height: 90vh;
     min-width: 100vw;
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
+    animation-name: textAppear;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
 }
 .rockTypeImages:hover{
     transform: scale(1.1)
@@ -142,7 +146,7 @@ nav a:hover {
     font-weight: bold;
     font-size: 125%;
     text-shadow: 0 0 100px white;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
     opacity: 0;
 }
 .rockTypeContainers:hover .rockTypeExplination{
