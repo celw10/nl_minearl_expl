@@ -89,7 +89,7 @@ function one() {
     elements[i].style.flex = "100%";
   }
   // Set text size
-  sizePopupText('200%')
+  sizePopupText('300%')
 }
 
 // Two images side by side
@@ -98,7 +98,7 @@ function two() {
     elements[i].style.flex = "50%";
   }
   // Set text size
-  sizePopupText('100%')
+  sizePopupText('150%')
 }
 
 // Four images side by side
@@ -107,7 +107,7 @@ function four() {
     elements[i].style.flex = "25%";
   }
   // Set text size
-  sizePopupText('50%')
+  sizePopupText('75%')
 }
 
 // Add active class to the current button (highlight it)

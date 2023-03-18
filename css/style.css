@@ -42,7 +42,7 @@ html {
 nav {
   display: flex;
   height: 32px;
-  width: 50%;
+  width: 52%;
   float: right;
   background-color: #4b609a90; /*THEMING*/
   align-items: center;
@@ -51,11 +51,25 @@ nav {
   font-size: 1.1vw;
 }
 
+/* Return to Chris' Rocks */
+nav a{
+  margin-left: 1%;
+  margin-right: 1%;
+  flex: 1;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: transform 1s ease-in-out;
+}
+nav a:hover {
+  transform: scale(1.1);
+}
+
 /* Search bar */
 nav input[type="search"] {
   height: 24px;
-  flex: 4;
-  margin-left: 2%;
+  flex: 2;
+  margin-left: 1%;
   margin-right: 1%;
   border: 0;
   border-radius: 5px;
@@ -97,10 +111,12 @@ nav button {
   margin-left: 1%;
   margin-right: 1%;
   border-radius: 5px;
-  border: 0;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
   text-align: center;
-  background-color: #16272B; /*THEMING*/
-  color: white;
+  background-color: white; /*THEMING*/
+  color: black;
   cursor: pointer;
 }
 .searchbutton:hover {
@@ -114,7 +130,7 @@ nav img {
   flex: 0.5;
   border: 0;
   margin-left: 1%;
-  margin-right: 2%;
+  margin-right: 1%;
   cursor: pointer;
 }
 .dropaside:hover {
@@ -267,4 +283,27 @@ ul li {
 /* Hide for displaying search results */
 .hide{
   display: none;
+}
+
+/* Table widths */
+#tableCompany{
+  width: 22%;
+}
+#tableLicense{
+  width: 14%;
+}
+#tableLocation{
+  width: 12%;
+}
+#tableStatus{
+  width: 12%;
+}
+#tableActive{
+  width: 12%;
+}
+#tableUnactive{
+  width: 12%;
+}
+#tableExpenditures{
+  width: 12%;
 }

@@ -12,13 +12,13 @@ HEAD
 
     <!-- Include metadata about HTML document -->
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- Site name -->
     <title> GIS Project </title>
 
     <!-- Link javascript: NOTE defer is essential -->
-    <script src="../js/app.js" type="text/javascript" defer> </script>
+    <script src="../js/app.js" defer></script>
 
     <!-- Link css -->
     <link rel="stylesheet" href="../css/style.css">
@@ -33,7 +33,7 @@ BODY: ArcGIS API
 
 <body class="main"> 
 
-    <img class="backgroundimg" id="gis" src="../images/gis/EastCoastBasemap.jpg">
+    <img class="backgroundimg" id="gis" src="../images/gis/EastCoastBasemap.jpg" alt="Background GIS images">
 
     <!-- Overlay div for content on top of GIS application -->
     <div class="overlay"> 
@@ -47,7 +47,7 @@ BODY: ArcGIS API
         <nav> 
 
             <!-- Database search, linked with JS listner -->
-            <input type="search" class="searchbar" id='data-search' placeholder="search database"/>
+            <input type="search" class="searchbar" id='data-search' placeholder="search database">
 
             <!-- Dropdown menu that governs query through database header -->
             <select class="query" id="data-headers">
@@ -65,10 +65,14 @@ BODY: ArcGIS API
 
             <!-- Image/data toggle menu, linke with JS to dropdown -->
             <button class="searchbutton" id="search-button" onclick="opensearch()">
-                search
+                <strong>search</strong>
             </button>
 
-            <img class="dropaside" src="../images/misc/menu.png" onclick="openmenu()">
+            <!-- Back button to Chris' Rocks -->
+            <a href="../index.html"> Chris' Rocks </a>
+
+            <!-- Drop menu -->
+            <img class="dropaside" src="../images/misc/menu.png" onclick="openmenu()" alt="Menu button">
 
         </nav>
 
@@ -83,7 +87,7 @@ BODY: ArcGIS API
             <aside class="menu" id="asidemenu">
 
                 <!-- Close aside menu -->
-                <img class="closeaside" src="../images/misc/close.png" onclick="closemenu()">
+                <img class="closeaside" src="../images/misc/close.png" onclick="closemenu()" alt="Close menu button">
 
                 <!-- Headers and list of (hopeful) future applicaiton functionalities -->
                 <h2>
@@ -93,7 +97,7 @@ BODY: ArcGIS API
                 <ul class="no-bullets-list">
                     <li> <a href="#" onclick="resetmap()"> Reset Map </a></li>
                     <li> 
-                        <input type="file" id="selected-file" class="hide" accept=".pdf" />
+                        <input type="file" id="selected-file" class="hide" accept=".pdf">
                         <a href="#" onclick="uploadpdf()" > Upload Assessment Report (PDF) </a>
                     </li>
                 </ul>
@@ -145,13 +149,13 @@ BODY: ArcGIS API
                     <!-- Table headers -->
                     <thead>
                         <tr>
-                            <th width="22%"> Company </th>
-                            <th width="14%"> License Number </th>
-                            <th width="12%"> Location </th>
-                            <th width="12%"> Status </th>
-                            <th width="12%"> Active From </th>
-                            <th width="12%"> Active To </th>
-                            <th width="16%"> Total Expenditures </th>
+                            <th id="tableCompany"> Company </th>
+                            <th id="tableLicense"> License Number </th>
+                            <th id="tableLocation"> Location </th>
+                            <th id="tableStatus"> Status </th>
+                            <th id="tableActive"> Active From </th>
+                            <th id="tableUnactive"> Active To </th>
+                            <th id="tableExpenditures"> Total Expenditures </th>
                         </tr>
                     </thead>
                     <!-- Table rows filled by Javascript activated template -->

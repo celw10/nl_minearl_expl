@@ -27,6 +27,7 @@ nav {
     margin: 2%;
 }
 nav h1 {
+    flex: 9;
     color: white;
     font-size: 24px;
 }
@@ -35,6 +36,16 @@ nav h1 a {
     text-decoration: none;
     font-style: italic;
 }
+#back{
+    flex: 1;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: transform 1s ease-in-out;
+  }
+  nav a:hover {
+    transform: scale(1.1);
+  }
 
 /* Container for File Selection */
 #container {

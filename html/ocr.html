@@ -24,27 +24,43 @@ HEAD
     <script src='https://unpkg.com/tesseract.js@4.0.2/dist/tesseract.min.js'></script>
 
     <!-- Link JS -->
-    <script src="../js/tesseract.js" type="text/javascript" defer></script>
+    <script src="../js/tesseract.js" defer></script>
 
 </head>
 
 <body>
 
     <nav>
-        <h1> Optical Charachter Recognition (OCR) Example with <a href="https://tesseract.projectnaptha.com/"> Tesseract </a> </h1>
+        <h1> Optical Charachter Recognition (OCR) Example with <a href="https://tesseract.projectnaptha.com/" target="_blank" rel="noopener noreferrer"> Tesseract </a> </h1>
+        
+        <!-- Back button to Chris' Rocks -->
+        <a id="back" href="../index.html"> Chris' Rocks </a>
     </nav>
+
+    <h2 style="color: white; margin-left: 2%;">
+         Instructions 
+    </h2>
+
+    <ol style="color: white; margin: 2%;"> 
+        <li> Upload an image file containing text in one of the supported languages (english, spanish, french). </li>
+        <li> Five example images, three in english and one in both spanish and french, may be downloaded  <a href="https://github.com/celw10/celw10.github.io/tree/main/ocr_examples" target="_blank" rel="noopener noreferrer"> here </a>. </li>
+        <li> Typical OCR image processing workflow outputs are in the next two rows. Please note that no pre-processing is done prior to OCR, this is simply to test the APIs image processing capabilities. </li>
+        <li> Your OCR output for the uploaded image is on the bottom row. </li>
+    </ol>
 
     <div id='container'>
         <p style="margin: 5px;">
-            Upload one of the provided test images for Tesseract API. 
+            Upload an image file containing text and select a language. 
         </p>
 
         <!-- File Upload -->
-        <input type="file" id='uploader' onchange="recognizeFile(window.lastFile=this.files[0])">
+        <input type="file" id='uploader' accept="image/*" onchange="recognizeFile(window.lastFile=this.files[0])">
 
         <!-- Select Language -->
         <select id='langsel'>
             <option value='eng' selected> English </option>
+            <option value='fra'> French </option>
+            <option value='spa'> Spanish </option>
         </select>
     </div>
 
@@ -56,19 +72,19 @@ HEAD
     <div class="row">
         <div class="column">
         <p style="padding-left: 5px;">Input Image</p>
-        <img id="imgInput" style="padding-left: 5px; max-width:45vw;">
+        <img id="imgInput" src="" style="padding-left: 5px; max-width:45vw;">
         </div>
         <div class="column">
         <p style="padding-left: 5px;">Rotated, Original Color</p>
-        <img id="imgOriginal" style="padding-left: 5px; max-width:45vw;">
+        <img id="imgOriginal" src="" style="padding-left: 5px; max-width:45vw;">
         </div>
         <div class="column">
-        <p style="padding-left: 5px;">Rotated, Grey</p>
-        <img id="imgGrey" style="padding-left: 5px; max-width:45vw;">
+        <p style="padding-left: px;">Rotated, Grey</p>
+        <img id="imgGrey" src="" style="padding-left: 5px; max-width:45vw;">
         </div>
         <div class="column">
         <p style="padding-left: 5px;">Rotated, Binary</p>
-        <img id="imgBinary" style="padding-left: 5px; max-width:45vw;">
+        <img id="imgBinary" src="" style="padding-left: 5px; max-width:45vw;">
         </div>
     </div>
 
@@ -78,7 +94,7 @@ HEAD
 
     <!-- Progress Update -->
     <div id="log" style="color: white;">
-        <p style="margin: 5px;"> Upload image through <em> Browse... </em> for OCR output </p>
+        <p style="margin: 5px;"> Tesseract will run in the selected language once an image is uploaded... </p>
     </div>
 
 </body>
