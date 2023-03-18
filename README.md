@@ -1,4 +1,4 @@
-Thank you for checking out my HTML, CSS, and Javascript project for GetCoding!
+Thank you for checking out my HTML, CSS, and Javascript project for GetCoding at: https://celw10.github.io/nl_minearl_expl/
 
 My original intention was to build the framework to solve a problem I enocuntered at my current job regarding historic mining data. Solving this problem is difficult. Discussing it with my coach, we decided that other modules in the GetCoding program may be more suited towards some of the funcitonality I want to build here. 
 
@@ -24,4 +24,4 @@ Finally, clicking on the last of the three sub-projects, ArcGIS API, you will se
 
 Thank you, and I hope you enjoy!
 
-Chris W.
+Chris Williams
