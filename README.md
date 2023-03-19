@@ -16,7 +16,7 @@ My original intention was to build the framework to solve a problem I encountere
 
 ---
 
-### **Usage/Features*
+### **Usage/Features**
 
 Navigation for Chris' Rocks is shown in the image below. Hover over the rock-type images. You'll see a brief description of each rock type and a popup of the rock type following your cursor. There are three rock types, and I have also included <em>Economic</em>. Further down the page, you'll see a few images of how I collected these rocks. To the left are four buttons that change the layout of the 12 rock samples I've picked to display. If you hover over a rock sample, its name will follow your cursor. Additional information about that sample will appear by clicking on the image. Note that cursor tracking functionality will not work on a mobile device, so please view it on a PC to take in the app's full functionality!
 
@@ -36,8 +36,8 @@ Opening the ArcGIS API project, you will see a map of Newfoundland and Labrador.
 
 ---
 
-### **Built With*
+### **Built With**
 
-ArcGIS Javascript API: https://developers.arcgis.com/javascript/latest/
-Tesseract Javascript API: https://tesseract.projectnaptha.com/
+ArcGIS Javascript API: https://developers.arcgis.com/javascript/latest/ </br>
+Tesseract Javascript API: https://tesseract.projectnaptha.com/ </br>
 n:point JSON data hosting service: https://www.npoint.io/
