@@ -30,7 +30,7 @@ The OCR Project uses the Tesseract API to recognize text in images. On the OCR P
 
 <img width="1280" alt="image" src="https://user-images.githubusercontent.com/34209214/226187152-2663b857-abe4-4c45-8b6a-c0ab57da9719.png">
 
-Opening the ArcGIS API project, you will see a map of Newfoundland and Labrador. There are many white circles with a number inside of them. These circles cluster all mineral showings in a particular area. You can navigate the app with mouse wheel zoom and click and drag movement. Zooming in, you will see individual mineral showings instead of clusters. The grey transparent polygons overlaying the topography are mineral exploration claims on the island. You can click on any mineral showing or grey polygon for additional details, as the example below shows for Buchans.
+Opening the ArcGIS API project, you will see a map of Newfoundland and Labrador. There are many white circles with a number inside of them. These circles cluster all mineral showings in a particular area. You can navigate the app with mouse wheel zoom and click and drag movement. Zooming in, you will see individual mineral showings instead of clusters. The grey transparent polygons overlaying the topography are mineral exploration claims on the island. You can click on any mineral showing or grey polygon for additional details, as the example below shows for Buchans. Please use your browsers back arrow to navigate back to Chris' Rocks from this page.
 
 ![image](https://user-images.githubusercontent.com/34209214/223206044-2e950705-db32-4b3d-b1f5-166a460893fc.png)
 
