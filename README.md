@@ -20,7 +20,7 @@ My original intention was to build the framework to solve a problem I encountere
 
 Navigation for Chris' Rocks is shown in the image below. Hover over the rock-type images. You'll see a brief description of each rock type and a popup of the rock type following your cursor. There are three rock types, and I have also included <em>Economic</em>. Further down the page, you'll see a few images of how I collected these rocks. To the left are four buttons that change the layout of the 12 rock samples I've picked to display. If you hover over a rock sample, its name will follow your cursor. Additional information about that sample will appear by clicking on the image. Note that cursor tracking functionality will not work on a mobile device, so please view it on a PC to take in the app's full functionality!
 
-![IntroPage](https://user-images.githubusercontent.com/34209214/223201101-8cfcdbdd-8d80-472d-8fa7-d9958e674df3.png)
+<img width="1280" alt="image" src="https://user-images.githubusercontent.com/34209214/226187078-47a9f41c-7c7f-43d3-ae63-c3c6a4fed189.png">
 
 Below is an image of the GIS Project's page. Toward the top right of the page, you will see five elements. A search bar, drop-down search tool, a search button, Chris' Rocks, and a menu image. To search through a database, type in a particular historic mining company, for example, <em>Noranda</em>. A footer element will appear after clicking <em>search</em> with the results of your search query. Clicking Chris' Rocks will return you to the main page, and clicking the menu image right of that will open a hidden menu. Clicking on the options in the popup menu will load different background images representative of different types of mineral exploration data.
 
