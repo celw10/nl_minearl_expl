@@ -24,7 +24,7 @@ This web app can be run in the broswer by clicking on the previous link.
 
 ### **Usage/Features**
 
-Navigation for Chris' Rocks is shown in the image below. Hover over the rock-type images. You'll see a brief description of each rock type and a popup of the rock type following your cursor. There are three rock types, and I have also included <em>Economic</em>. Further down the page, you'll see a few images of how I collected these rocks. To the left are four buttons that change the layout of the 12 rock samples I've picked to display. If you hover over a rock sample, its name will follow your cursor. Additional information about that sample will appear by clicking on the image. Note that cursor tracking functionality will not work on a mobile device, so please view it on a PC to take in the app's full functionality!
+Navigation for Chris' Rocks is shown in the image below. Hover over the rock-type images. You'll see a brief description of each rock type and a popup of the rock type following your cursor. There are three rock types, and I have also included <em>Economic</em> Rocks (the kind you can make money from!). Further down the page, you'll see a few images of how I collected these rocks. To the left are four buttons that change the layout of the 12 rock samples I've picked to display. If you hover over a rock sample, its name will follow your cursor. Additional information about that sample will appear by clicking on the image. Note that cursor tracking functionality will not work on a mobile device, so please view it on a PC to take in the app's full functionality!
 
 <img width="1264" alt="image" src="https://user-images.githubusercontent.com/34209214/226187193-fec3891b-3837-444d-b8bc-17c722925e7b.png">
 
