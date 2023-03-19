@@ -26,7 +26,7 @@ Below is an image of the GIS Project's page. Toward the top right of the page, y
 
 ![image](https://user-images.githubusercontent.com/34209214/223204427-04b30b6d-6bd4-4a66-82b5-7b56027cbd21.png)
 
-The OCR Project uses the Tesseract API to recognize text in images. On the OCR Project page, you may upload only image data in either English, Spanish or French. This image should have some text for the Tesseract OCR algorithm to recognize. Four versions of your uploaded image are generated in addition to the recognized text. These four popups represent typical processing steps during OCR but are not implemented here. There are five example images in the GitHub repo under the directory labelled ocr_examples under images, or you may follow the link provided on the page.
+The OCR Project uses the Tesseract API to recognize text in images. On the OCR Project page, you may upload only image data in either English, Spanish or French. This image should have some text for the Tesseract OCR algorithm to recognize. Four versions of your uploaded image are generated in addition to the recognized text. These four popups represent typical processing steps during OCR but are not implemented here. There are five example images in the GitHub repo under the directory labelled <em>ocr_examples</em> under <em>images</em>, or you may follow the link provided on the page.
 
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/34209214/223279537-042260c0-7233-4645-9db8-49b6abe427b4.png">
 
