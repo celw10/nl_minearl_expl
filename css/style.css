@@ -11,7 +11,7 @@
 html {
   width: 100vw;
 }
-
+ 
 /* Main body container */
 .main{
   height: 100vh;
@@ -31,7 +31,7 @@ html {
   top: 0px;
   right: 0px;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 /* ============================================================================
@@ -42,13 +42,13 @@ html {
 nav {
   display: flex;
   height: 32px;
-  width: 52%;
+  max-width: 65%;
   float: right;
   background-color: #4b609a90; /*THEMING*/
   align-items: center;
   margin: 5px;
   border-radius: 5px;
-  font-size: 1.1vw;
+  font-size: 1.15vw;
 }
 
 /* Return to Chris' Rocks */
@@ -77,10 +77,12 @@ nav input[type="search"] {
   background-color: #16272B; /*THEMING*/
   color: white;
   cursor: text;
+  font-size: 1.15vw;
 }
 .searchbar:hover {
   transform: scale(1.05);
   cursor: pointer;
+  font-size: 1.15vw;
 }
 .searchbar::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -98,6 +100,7 @@ nav select {
   background-color: #16272B; /*THEMING*/
   color:  white;
   cursor: pointer;
+  font-size: 1.15vw;
 }
 .query:hover {
   transform: scale(1.05);
